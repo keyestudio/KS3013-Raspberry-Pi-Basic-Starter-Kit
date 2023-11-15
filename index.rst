@@ -1,10 +1,13 @@
 
 .. toctree::
-   :maxdepth: 5
+   :maxdepth: 3
    :caption: KS3013 Raspberry Pi Basic Starter Kit Python
 
 
-   KS3013.md
+   home.md
+   c/c.md
+   python/python.md
+   java/java.md
 
 
 
