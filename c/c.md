@@ -1,12 +1,12 @@
-# KS3013 Raspberry Pi Basic Starter Kit（C Language）
+# **C Language tutorials**
 
-# Preparations for C Language
+## Preparations for C Language
 
 C is a procedural programming language. It was initially developed by Dennis Ritchie in the year 1972. It was mainly developed as a system programming language to write an operating system. The main features of C language include low-level access to memory, a simple set of keywords, and clean style, these features make C language suitable for system programmings like an operating system or compiler development.
 
 Next to control 40 pins of Raspberry Pi via C language
 
-## (1) Install WiringPi GPIO Library
+**Install WiringPi GPIO Library**
 
 We will control IO ports of Raspberry Pi by WiringPi GPIO library, let’s install WiringPi GPIO library.
 
@@ -42,7 +42,7 @@ Pins definition of WiringPi GPIO Library
 
 ![](media/5f92073019c5cd48a1581d0589184165.png)
 
-## (2) Run Example Code1：
+**Run Example Code1**
 
 Copy the C_code.zip we provide to pi folder, and extract the example code from zip file, as shown below:
 
@@ -103,11 +103,11 @@ You could select the folder and right-click to choose Openin the terminal as sho
 
 ![](media/fc4a9264f36589007b0f5427ff944f4a.png)
 
-# 6. Projects：
+## Projects：
 
 **Note: G, - and GND marked on sensors and modules are so-called positive, which are connected to GND of GPIO extension board or “-” of breadboard; V、+、VCC are known as positive, which are interfaced 3V3 or 5V on extension board and“+”on breadboard.**
 
-## Project 1：Hello World
+### Project 1：Hello World
 
  Compile and Run the Example Code：
 
@@ -128,8 +128,8 @@ Terminal prints Hello World ! , as shown below:
  Example Code：
 
 ```c++
-#include <wiringPi.h>   //wiringPi GPIO library
-#include <stdio.h>  //standard input & output library
+##include <wiringPi.h>   //wiringPi GPIO library
+##include <stdio.h>  //standard input & output library
 
 int main()  //Main function, the entry of the program
 {
@@ -145,7 +145,7 @@ int main()  //Main function, the entry of the program
 
 
 
-## Project 2：LED Blinks
+### Project 2：LED Blinks
 
 Description：
 
@@ -205,10 +205,10 @@ Note: Press Ctrl + C on keyboard and exit code running.
 
 Example Code：
 ```c++
-#include <wiringPi.h>
-#include <stdio.h>
+##include <wiringPi.h>
+##include <stdio.h>
 
-#define ledPin 1  //define led pin, BCM GPIO 18
+##define ledPin 1  //define led pin, BCM GPIO 18
 
 int main()
 {
@@ -231,7 +231,7 @@ int main()
 
 
 
-## Project 3：SOS Light
+### Project 3：SOS Light
 
 1. Description：
 
@@ -275,11 +275,11 @@ Note: Press Ctrl + C on keyboard and exit code running.
 
 
 ```c++
-#include <wiringPi.h>
-#include <stdio.h> //The stdio.h header file defines three variable types, 
+##include <wiringPi.h>
+##include <stdio.h> //The stdio.h header file defines three variable types, 
                    //some macros, and various functions to perform input and output.
 
-#define ledPin 1  //define led pin
+##define ledPin 1  //define led pin
 int i1,i2,i3;
 
 int main()
@@ -328,7 +328,7 @@ int main()
 }
 ```
 
-## Project 4：Breathing LED
+### Project 4：Breathing LED
 
  Description：
 
@@ -389,10 +389,10 @@ Note: Press Ctrl + C on keyboard and exit code running.
 Example Code 1：
 
 ```c++
-#include <stdio.h>
-#include <wiringPi.h>
+##include <stdio.h>
+##include <wiringPi.h>
  
-#define LED 1  //define led pin
+##define LED 1  //define led pin
 
 int main(void)
 {
@@ -442,11 +442,11 @@ Note: Press Ctrl + C on keyboard and exit code running.
 ** Example Code 2：**
 
 ```c++
-#include <stdio.h>
-#include <wiringPi.h>
-#include <softPwm.h>  //Software PWM library
+##include <stdio.h>
+##include <wiringPi.h>
+##include <softPwm.h>  //Software PWM library
 
-#define LED 1 
+##define LED 1 
 
 int main(void)
 {
@@ -473,7 +473,7 @@ int main(void)
 ```
 
 
-## Project 5：Traffic Lights
+### Project 5：Traffic Lights
 
  Description：
 
@@ -523,11 +523,11 @@ lit for 5s and off, in a loop.
 **Example Code**
 
 ```c++
-#include <wiringPi.h>
+##include <wiringPi.h>
 
-#define R_pin 1  //BCM GPIO 18
-#define G_pin 4  //BCM GPIO 24
-#define Y_pin 5  //BCM GPIO 23
+##define R_pin 1  //BCM GPIO 18
+##define G_pin 4  //BCM GPIO 24
+##define Y_pin 5  //BCM GPIO 23
 
 int main()
 {
@@ -562,7 +562,7 @@ int main()
 ```
 
 
-## Project 6：RGB Light
+### Project 6：RGB Light
 
  Description：
 
@@ -619,16 +619,16 @@ RGB light shows the all kinds of colors randomly.
 **Example Code**
 
 ```c++
- #include <stdio.h>
- #include <stdlib.h>
- #include <stdint.h>
- #include <wiringPi.h>
- #include <softPwm.h>
- #include <time.h>
+ ##include <stdio.h>
+ ##include <stdlib.h>
+ ##include <stdint.h>
+ ##include <wiringPi.h>
+ ##include <softPwm.h>
+ ##include <time.h>
 
- #define pin_R 5 //BCM GPIO 24
- #define pin_G 4 //BCM GPIO 23
- #define pin_B 1 //BCM GPIO 18
+ ##define pin_R 5 //BCM GPIO 24
+ ##define pin_G 4 //BCM GPIO 23
+ ##define pin_B 1 //BCM GPIO 18
  
 
 int main(void){
@@ -655,7 +655,7 @@ int main(void){
 }
 ```
 
-## Project 7：Flow Light
+### Project 7：Flow Light
 
  1Description：
 
@@ -693,16 +693,16 @@ Note: Press Ctrl + C on keyboard and exit code runningNote: press Ctrl + C to ex
 **6.Example Code:**
 
 ```c++
-#include <wiringPi.h>
+##include <wiringPi.h>
 
-#define led1 1 //BCM GPIO 18
-#define led2 4 //BCM GPIO 23
-#define led3 5 //BCM GPIO 24
-#define led4 6 //BCM GPIO 25
-#define led5 26 //BCM GPIO 12
-#define led6 27 //BCM GPIO 16
-#define led7 28 //BCM GPIO 20
-#define led8 29 //BCM GPIO 21
+##define led1 1 //BCM GPIO 18
+##define led2 4 //BCM GPIO 23
+##define led3 5 //BCM GPIO 24
+##define led4 6 //BCM GPIO 25
+##define led5 26 //BCM GPIO 12
+##define led6 27 //BCM GPIO 16
+##define led7 28 //BCM GPIO 20
+##define led8 29 //BCM GPIO 21
 
 int main()
 {
@@ -767,7 +767,7 @@ int main()
 ```
 
 
-## Project 8：Doorbell
+### Project 8：Doorbell
 
  Description：
 
@@ -828,10 +828,10 @@ Note: Press Ctrl + C on keyboard and exit code running.
  Example Code：
 
 ```c++
-#include <wiringPi.h>
-#include <stdio.h>
-#define button 1   //button pin BCM GPIO 18
-#define buzzer 2   //buzzer pin BCM GPIO 27
+##include <wiringPi.h>
+##include <stdio.h>
+##define button 1   //button pin BCM GPIO 18
+##define buzzer 2   //buzzer pin BCM GPIO 27
 int main()
 {
   wiringPiSetup();
@@ -854,7 +854,7 @@ int main()
 ```
 
 
-## Project 9：Passive Buzzer
+### Project 9：Passive Buzzer
 
  Description：
 
@@ -907,12 +907,12 @@ Note: Press Ctrl + C on keyboard and exit code running.
  Example Code1：
 
 ```c++
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <wiringPi.h>
+##include <stdio.h>
+##include <stdlib.h>
+##include <stdint.h>
+##include <wiringPi.h>
 
-#define buzPin 1  //BCM GPIO 18
+##define buzPin 1  //BCM GPIO 18
 
 void init()
 {
@@ -991,26 +991,26 @@ Note: Press Ctrl + C on keyboard and exit code running.
 **Example Code2：**
 
 ```c++
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <wiringPi.h>
-#define Do 262
-#define Re 294
-#define Mi 330
-#define Fa 349
-#define Sol 392
-#define La 440
-#define Si 494
-#define Do_h 532
-#define Re_h 587
-#define Mi_h 659
-#define Fa_h 698
-#define Sol_h 784
-#define La_h 880
-#define Si_h 988
+##include <stdio.h>
+##include <stdlib.h>
+##include <stdint.h>
+##include <wiringPi.h>
+##define Do 262
+##define Re 294
+##define Mi 330
+##define Fa 349
+##define Sol 392
+##define La 440
+##define Si 494
+##define Do_h 532
+##define Re_h 587
+##define Mi_h 659
+##define Fa_h 698
+##define Sol_h 784
+##define La_h 880
+##define Si_h 988
 
-#define buzPin 1   //buzzer pin BCM GPIO 18
+##define buzPin 1   //buzzer pin BCM GPIO 18
 
 //The tones
 int song_1[]=
@@ -1080,7 +1080,7 @@ int main()
 ```
 
 
-## Project 10：1-Digit 7 Segment LED Display
+### Project 10：1-Digit 7 Segment LED Display
 
  Description：
 
@@ -1137,7 +1137,7 @@ Note: Press Ctrl + C on keyboard and exit code running.
 **Example Code：**
 
 ```c++
-#include <wiringPi.h>
+##include <wiringPi.h>
 //led pin
 int a=4;  //GPIO23
 int b=1;  //GPIO18
@@ -1299,7 +1299,7 @@ int main()
 
 
 
-## Project 11：4-Digit LED Display
+### Project 11：4-Digit LED Display
 
  Description：
 
@@ -1353,7 +1353,7 @@ Note: Press Ctrl + C on keyboard and exit code running.
  Example Code：
 
 ```c++
-#include <wiringPi.h>
+##include <wiringPi.h>
 int a = 5;// GPIO24
 int b = 1; // GPIO18
 int c = 22;// GPIO6
@@ -1632,7 +1632,7 @@ int main()
 
 ![Img](./media/KS3013.md/img-20231011140745.png)
 
-## Project 12：8\*8 Dot Matrix
+### Project 12：8\*8 Dot Matrix
 
  Description：
 
@@ -1691,7 +1691,7 @@ Note: Press Ctrl + C on keyboard and exit code running.
  Example Code：
 
 ```c++
-#include <wiringPi.h>
+##include <wiringPi.h>
 
 int y[8]={2,7,21,0,25,22,24,23};  //Y direction pin
 int x[8]={5,27,28,1,29,4,6,26};   //X direction pin
@@ -1729,7 +1729,7 @@ int main()
 
 
 
-## Project 13：74HC595
+### Project 13：74HC595
 
 Description：
 
@@ -1809,8 +1809,8 @@ Note: Press Ctrl + C on keyboard and exit code running.
  Example Code：
 
 ```c++
-#include <wiringPi.h>
-#include <wiringShift.h>
+##include <wiringPi.h>
+##include <wiringShift.h>
 int dataPin = 0; //define three pins  BCM GPIO 17
 int latchPin = 2; //BCM GPIO 22
 int clockPin = 3; //BCM GPIO 27
@@ -1840,7 +1840,7 @@ int main()
 ```
 
 
-## Project 14：Button-controlled LED
+### Project 14：Button-controlled LED
 
  Description：
 
@@ -1895,10 +1895,10 @@ Note: Press Ctrl + C on keyboard and exit code running.
  Example Code：
 
 ```c++
-#include <wiringPi.h>
-#include <stdio.h>
-#define btnPin 1  // button Pin BCM GPIO 18
-#define ledPin 2  // LED pin BCM GPIO 27
+##include <wiringPi.h>
+##include <stdio.h>
+##define btnPin 1  // button Pin BCM GPIO 18
+##define ledPin 2  // LED pin BCM GPIO 27
   
 int main()
 {
@@ -1933,7 +1933,7 @@ int main()
 ```
 
 
-## Project 15：Responder
+### Project 15：Responder
 
 Description：
 
@@ -1979,16 +1979,16 @@ Note: Press Ctrl + C on keyboard and exit code running.
  Example Code：
 
 ```c++
-#include <wiringPi.h>
+##include <wiringPi.h>
 
 //define the pin
-#define redled  25    //BCM GPIO 26
-#define yellowled 24  //BCM GPIO 19
-#define blueled 23    //BCM GPIO 13
-#define redpin 4      //BCM GPIO 23
-#define yellowpin 5   //BCM GPIO 24
-#define bluepin 6     //BCM GPIO 25
-#define restpin 1     //BCM GPIO 18
+##define redled  25    //BCM GPIO 26
+##define yellowled 24  //BCM GPIO 19
+##define blueled 23    //BCM GPIO 13
+##define redpin 4      //BCM GPIO 23
+##define yellowpin 5   //BCM GPIO 24
+##define bluepin 6     //BCM GPIO 25
+##define restpin 1     //BCM GPIO 18
 
 int red;
 int yellow;
@@ -2066,7 +2066,7 @@ int main()
 ```
 
 
-## Project 16：PIR Motion Sensor
+### Project 16：PIR Motion Sensor
 
  Description：
 
@@ -2115,12 +2115,12 @@ Note: Press Ctrl + C on keyboard and exit code running.
  Example Code：
 
 ```c++
-#include <wiringPi.h>
-#include <pcf8591.h>
-#include <stdio.h>
+##include <wiringPi.h>
+##include <pcf8591.h>
+##include <stdio.h>
 
-#define PIR_pin 1  //PIR pin  BCM GPIO 18
-#define led_pin 21  //LED pin BCM GPIO 5
+##define PIR_pin 1  //PIR pin  BCM GPIO 18
+##define led_pin 21  //LED pin BCM GPIO 5
 
 int main(void)
 {
@@ -2147,7 +2147,7 @@ int main(void)
 ```
 
 
-## Project 17：Fire Alarm
+### Project 17：Fire Alarm
 
  Description：
 
@@ -2196,10 +2196,10 @@ Note: Press Ctrl + C on keyboard and exit code running.
  Example Code：
 
 ```c++
-#include <wiringPi.h>
-#include <stdio.h>
-#define flamePin 1  //BCM GPIO 18
-#define buzPin 2  //define buzzer pin  BCM GPIO 27
+##include <wiringPi.h>
+##include <stdio.h>
+##define flamePin 1  //BCM GPIO 18
+##define buzPin 2  //define buzzer pin  BCM GPIO 27
 
 int main()
 {
@@ -2223,7 +2223,7 @@ int main()
 ```
 
 
-## Project 18：Electronic Hourglass
+### Project 18：Electronic Hourglass
 
  Description：
 
@@ -2276,17 +2276,17 @@ Note: Press Ctrl + C on keyboard and exit code running.
  Example Code：
 
 ```c++
-#include <stdio.h>
- #include <stdlib.h>
- #include <stdint.h>
- #include <wiringPi.h>
- #include <softPwm.h>
+##include <stdio.h>
+ ##include <stdlib.h>
+ ##include <stdint.h>
+ ##include <wiringPi.h>
+ ##include <softPwm.h>
 
 //define led pin
- #define LED1 0  //BCM GPIO 17
- #define LED2 2  //BCM GPIO 27
+ ##define LED1 0  //BCM GPIO 17
+ ##define LED2 2  //BCM GPIO 27
  //define Ball Tilt Sensor Pin
- #define tiltPin 1  //BCM GPIO 18
+ ##define tiltPin 1  //BCM GPIO 18
 
  int main(void){
      int val;
@@ -2339,7 +2339,7 @@ Note: Press Ctrl + C on keyboard and exit code running.
 }
 ```
 
-## Project 19：Stepless Dimming
+### Project 19：Stepless Dimming
 
  Description：
 
@@ -2394,7 +2394,7 @@ Used to read the address of pin A0\~A3.
 
 The address of analog output pin AOUT: 0x40, that is, 64 converting from hexadecimal to decimal.
 
-A0 = 0x40 \#\#A0 ----\> port address
+A0 = 0x40 \##\##A0 ----\> port address
 
 A1 = 0x41
 
@@ -2437,16 +2437,16 @@ Note: Press Ctrl + C on keyboard and exit code running.
  Example Code：
 
 ```c++
-#include <wiringPi.h>
-#include <pcf8591.h>  //pcf8591 library
-#include <stdio.h>
+##include <wiringPi.h>
+##include <pcf8591.h>  //pcf8591 library
+##include <stdio.h>
 
-#define Address 0x48  //iic address
-#define BASE 64  //DAC write address
-#define A0 BASE+0  //A0 analogRead  address
-#define A1 BASE+1  //A1 analogRead  address
-#define A2 BASE+2 
-#define A3 BASE+3
+##define Address 0x48  //iic address
+##define BASE 64  //DAC write address
+##define A0 BASE+0  //A0 analogRead  address
+##define A1 BASE+1  //A1 analogRead  address
+##define A2 BASE+2 
+##define A3 BASE+3
 
 int main(void)
 {
@@ -2467,9 +2467,9 @@ int main(void)
 
  Knowledge：
 
-| \#define Address 0x48 pcf8591Setup(BASE,Address);                                            | Icc address of PCF8591 is set to 0x48                                                                                                       |
+| \##define Address 0x48 pcf8591Setup(BASE,Address);                                            | Icc address of PCF8591 is set to 0x48                                                                                                       |
 |----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| \#define BASE 64 \#define A0 BASE+0 \#define A1 BASE+1 \#define A2 BASE+2 \#define A3 BASE+3 | pcf8591 analog port Set the address of A0 to 0x40 Set the address of A1 to 0x41 Set the address of A2 to 0x42 Set the address of A3 to 0x43 |
+| \##define BASE 64 \##define A0 BASE+0 \##define A1 BASE+1 \##define A2 BASE+2 \##define A3 BASE+3 | pcf8591 analog port Set the address of A0 to 0x40 Set the address of A1 to 0x41 Set the address of A2 to 0x42 Set the address of A3 to 0x43 |
 
 **Project 20：Photoresistor**
 
@@ -2521,18 +2521,18 @@ Note: Press Ctrl + C on keyboard and exit code running.
 
 
 ```c++
-#include <wiringPi.h>
-#include <pcf8591.h>
-#include <stdio.h>
+##include <wiringPi.h>
+##include <pcf8591.h>
+##include <stdio.h>
 
-#define Address 0x48
-#define BASE 64
-#define A0 BASE+0
-#define A1 BASE+1
-#define A2 BASE+2
-#define A3 BASE+3
+##define Address 0x48
+##define BASE 64
+##define A0 BASE+0
+##define A1 BASE+1
+##define A2 BASE+2
+##define A3 BASE+3
 
-#define ledPin 21  //led pin BCM GPIO 5
+##define ledPin 21  //led pin BCM GPIO 5
 
 int main(void)
 {
@@ -2554,7 +2554,7 @@ int main(void)
 }
 ```
 
-## Project 21：Sound-activated Light
+### Project 21：Sound-activated Light
 
  Description：
 
@@ -2610,18 +2610,18 @@ Note: Press Ctrl + C on keyboard and exit code running.
 
 
 ```c++
-#include <wiringPi.h>
-#include <pcf8591.h>
-#include <stdio.h>
+##include <wiringPi.h>
+##include <pcf8591.h>
+##include <stdio.h>
 
-#define Address 0x48
-#define BASE 64
-#define A0 BASE+0
-#define A1 BASE+1
-#define A2 BASE+2
-#define A3 BASE+3
+##define Address 0x48
+##define BASE 64
+##define A0 BASE+0
+##define A1 BASE+1
+##define A2 BASE+2
+##define A3 BASE+3
 
-#define ledPin 21  //led pin  //BCM GPIO 5
+##define ledPin 21  //led pin  //BCM GPIO 5
 
 int count = 0;
 int flag = 0;
@@ -2656,7 +2656,7 @@ int main(void)
 ```
 
 
-## Project 22：LCD1602 & MQ-2 Gas Leakage Alarm
+### Project 22：LCD1602 & MQ-2 Gas Leakage Alarm
 
  Description：
 
@@ -2726,20 +2726,20 @@ Note: Press Ctrl + C on keyboard and exit code running.
 **Example Code：**
 
 ```c++
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <wiringPi.h>
-#include <pcf8591.h>
-#include <lcd.h>
-#define Address 0x48
-#define BASE 64
-#define A0 BASE+0
-#define A1 BASE+1
-#define A2 BASE+2
-#define A3 BASE+3
+##include <stdio.h>
+##include <stdlib.h>
+##include <string.h>
+##include <wiringPi.h>
+##include <pcf8591.h>
+##include <lcd.h>
+##define Address 0x48
+##define BASE 64
+##define A0 BASE+0
+##define A1 BASE+1
+##define A2 BASE+2
+##define A3 BASE+3
 
-#define buzPin 28   //buzzer pin  BCM GPIO 20
+##define buzPin 28   //buzzer pin  BCM GPIO 20
 
 void change(int num,char *src) //This function changes 1234 to 4321 of the string
 {
@@ -2810,7 +2810,7 @@ int main(void)
 ```
 
 
-## Project 23：Water Level Monitor
+### Project 23：Water Level Monitor
 
 **Description：**
 
@@ -2860,18 +2860,18 @@ Note: Press Ctrl + C on keyboard and exit code running.
 **Example Code：**
 
 ```c++
-#include <wiringPi.h>
-#include <pcf8591.h>
-#include <stdio.h>
+##include <wiringPi.h>
+##include <pcf8591.h>
+##include <stdio.h>
 
-#define Address 0x48
-#define BASE 64
-#define A0 BASE+0
-#define A1 BASE+1
-#define A2 BASE+2
-#define A3 BASE+3
+##define Address 0x48
+##define BASE 64
+##define A0 BASE+0
+##define A1 BASE+1
+##define A2 BASE+2
+##define A3 BASE+3
 
-#define buzPin 1  //buzzer pin BCM GPIO 18
+##define buzPin 1  //buzzer pin BCM GPIO 18
 
 int main(void)
 {
@@ -2898,7 +2898,7 @@ int main(void)
 ```
 
 
-## Project 24：5V Relay + Water Pump
+### Project 24：5V Relay + Water Pump
 
  Description：
 
@@ -2964,10 +2964,10 @@ Note: Press Ctrl + C on keyboard and exit code running.
  Example Code：
 
 ```c++
-#include <wiringPi.h>
-#include <stdio.h>
+##include <wiringPi.h>
+##include <stdio.h>
 
-#define relayPin 1  //BCM GPIO 18
+##define relayPin 1  //BCM GPIO 18
 
 int main()
 {
@@ -2987,7 +2987,7 @@ int main()
 ```
 
 
-## Project 25：Flower-watering Device
+### Project 25：Flower-watering Device
 
  Description：
 
@@ -3038,18 +3038,18 @@ Note: Press Ctrl + C on keyboard and exit code running.
  Example Code：
 
 ```c++
-#include <wiringPi.h>
-#include <pcf8591.h>
-#include <stdio.h>
+##include <wiringPi.h>
+##include <pcf8591.h>
+##include <stdio.h>
 
-#define Address 0x48  //address  ---> device address
-#define BASE 64    //DA converter command
-#define A0 BASE+0  //A0  ----> port address
-#define A1 BASE+1
-#define A2 BASE+2
-#define A3 BASE+3
+##define Address 0x48  //address  ---> device address
+##define BASE 64    //DA converter command
+##define A0 BASE+0  //A0  ----> port address
+##define A1 BASE+1
+##define A2 BASE+2
+##define A3 BASE+3
 
-#define relayPin 1  //BCM GPIO 18
+##define relayPin 1  //BCM GPIO 18
 
 int main(void)
 {
@@ -3072,7 +3072,7 @@ int main(void)
 ```
 
 
-## Project 26：Servo
+### Project 26：Servo
 
  Description：
 
@@ -3120,8 +3120,8 @@ Note: Press Ctrl + C on keyboard and exit code running.
 
 
 ```c++
-#include <wiringPi.h>
-#define serPin 1 //servo pin BCM GPIO 18
+##include <wiringPi.h>
+##define serPin 1 //servo pin BCM GPIO 18
 
 int main()
 {
@@ -3152,7 +3152,7 @@ int main()
 }
 ```
 
-## Project 27：L293D Driver Motor
+### Project 27：L293D Driver Motor
 
  Description：
 
@@ -3182,7 +3182,7 @@ The two-channel motor can be driven and rotate clockwise and anticlockwise when 
 
 ![](media/2e5e0bd5b4577ac159d0568404dc21b5.png)
 
-| \# | Pin Name | Description                                         |
+| \## | Pin Name | Description                                         |
 |----|----------|-----------------------------------------------------|
 | 1  | Enable1  | Enable pin input 1(2) and Input 2(7)                |
 | 2  | In1      | Control output1 and controlled  by digital circuit  |
@@ -3227,16 +3227,16 @@ Note: Press Ctrl + C on keyboard and exit code running.
 
 
 ```c++
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <wiringPi.h>
-#include <softPwm.h>
+##include <stdio.h>
+##include <stdlib.h>
+##include <stdint.h>
+##include <wiringPi.h>
+##include <softPwm.h>
 
 //define L293D pin
-#define INA1 0  //BCM GPIO 17
-#define INA2 2  //BCM GPIO 27
-#define ENA  3  //BCM GPIO 22
+##define INA1 0  //BCM GPIO 17
+##define INA2 2  //BCM GPIO 27
+##define ENA  3  //BCM GPIO 22
 
 void forward()
 {
@@ -3281,7 +3281,7 @@ int main(void)
 ```
 
 
-## Project 28：Ultrasonic Sensor
+### Project 28：Ultrasonic Sensor
 
  Description：
 
@@ -3336,13 +3336,13 @@ Note: Press Ctrl + C on keyboard and exit code running.
 
 
 ```c++
-#include <wiringPi.h>
-#include <stdio.h>
-#include <sys/time.h>   //Import the time system header file
+##include <wiringPi.h>
+##include <stdio.h>
+##include <sys/time.h>   //Import the time system header file
 
 //define the pin
-#define Trig    4   //BCM GPIO 23
-#define Echo    5   //BCM GPIO 24
+##define Trig    4   //BCM GPIO 23
+##define Echo    5   //BCM GPIO 24
 
 //set pin mode
 void ultraInit(void)
@@ -3413,14 +3413,3 @@ int main(void)
 
 <https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/sys_time.h.html>
 
-# 7.Resources：
-
-1.  <https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/6>
-
-2.  <https://wiki.keyestudio.com/KS3001(3002,_3003,.....3012%EF%BC%89Raspberry_Pi_Complete_Device_Kit>
-
-3.  <https://www.raspberrypi.org/documentation/installation/installing-images/README.md>
-
-4.  <https://www.raspberrypi.org/software/>
-
-5.  https://fs.keyestudio.com/KS3013

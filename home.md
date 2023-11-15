@@ -1,16 +1,19 @@
-# **KS3013 Raspberry Pi Basic Starter Kit Processing JAVA**
+# **Getting Started With Raspberry Pi Basic Starter Kit **
 
-# 1.Description：
+## Download code and library
+[https://fs.keyestudio.com/KS3013](https://fs.keyestudio.com/KS3013)
+
+## Description：
 
 Raspberry Pi is a credit-card sized computer of low cost with Raspberry Pi OS as its official system and can be taken as a personal server and router. Furthermore, it extends out 40 pins to link with sensors or modules, which makes conducting all kind of experiments possible. You could get a camera monitor by plugging a camera to Raspberry Pi. Equally, the voice interactive function could be achieved if a microphone or a camera is connected with it.
 
 And this is a purpose-built kit for Raspberry Pi enthusiasts, through which you could acquire knowledge of Linux and Python, Java and other programming languages, as well as the application of sensors or modules.
 
-# Kit List
+## Kit List
 
 When you get this kit, please confirm whether all components listed below have been delivered.
 
-| #    | Product Name                  | Quantity | Picture                                                      |
+| ##    | Product Name                  | Quantity | Picture                                                      |
 | ---- | ----------------------------- | -------- | ------------------------------------------------------------ |
 | 1    | GPIO Extension Board          | 1        | ![img](media/wps1.jpg)                                       |
 | 2    | LED - Green                   | 5        | ![img](media/wps2.png)                                       |
@@ -53,7 +56,7 @@ When you get this kit, please confirm whether all components listed below have b
 | 39   | Screwdriver                   | 1        | ![img](media/wps43.jpg)                                      |
 | 40   | Resistance Color Code Table   | 1        | ![img](media/wps44.png)                                      |
 
-# 3.Install Raspberry Pi OS System：
+## Install Raspberry Pi OS System：
 
 **Hardware Tool：**
 
@@ -194,7 +197,7 @@ Download Address：
 
 ![](media/3e0526d601054847d1b1feee8384dbbe.png)
 
-# 4.Install Raspberry Pi OS on Raspberry Pi 4B
+## Install Raspberry Pi OS on Raspberry Pi 4B
 
 Insert TFT RAM card to card reader, then interface card reader to USB port of computer.
 
@@ -282,7 +285,7 @@ su root
 
 Firstly change ip address of the following configuration file
 
-（\#New ip address：address 192.168.1.99）
+（\##New ip address：address 192.168.1.99）
 
 Copy the above new address to terminal and press“Enter”
 
@@ -294,7 +297,7 @@ auto eth0
 
 iface eth0 inet static
 
-\#Change IP address
+\##Change IP address
 
 address 192.168.1.99
 
@@ -383,15 +386,15 @@ Now, we finish the basic configuration of Raspberry Pi OS.
 
 
 
-# Raspberry Pi 4B：
+## Raspberry Pi 4B：
 
 ![Img](./media/KS3013.md/img-20231011140616.png)
 
-## Hardware Interfaces：
+ **Hardware Interfaces**
 
 ![](media/d232a87d73f7426894a6cafed80521a0.png)
 
-## 40-Pin GPIO Header Description：
+**40-Pin GPIO Header Description**
 
 GPIO pins are divided into BCM GPIO number, physics number and WiringPi GPIO number.
 
@@ -405,7 +408,7 @@ Note: pin(3.3 V) on the left hand is square, but other pins are round. Turn Rasp
 
 Note: the largest current of each pin on Raspberry Pi 4B is 16mA and the aggregate current of all pins is not less than 51mA.
 
-# GPIO Extension Board：
+## GPIO Extension Board：
 
 This extension board is led out by 40-pin headers of Raspberry Pi for convenient connection.
 
@@ -416,3 +419,15 @@ Note: the silk mark is also printed according to BCM GPIO number.
 **Connection Diagram**
 
 ![](media/9ffda4057d1a225502e509706e841b6a.png)
+
+## Resources：
+
+1.  <https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/6>
+
+2.  <https://wiki.keyestudio.com/KS3001(3002,_3003,.....3012%EF%BC%89Raspberry_Pi_Complete_Device_Kit>
+
+3.  <https://www.raspberrypi.org/documentation/installation/installing-images/README.md>
+
+4.  <https://www.raspberrypi.org/software/>
+
+

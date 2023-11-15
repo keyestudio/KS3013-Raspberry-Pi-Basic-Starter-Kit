@@ -1,16 +1,16 @@
-# **KS3013 Raspberry Pi Basic Starter Kit Processing JAVA**
+## **Processing JAVA tutorials**
 
 We recommend you to learn the Python and C language tutorials about this kit firstly. We demonstrate how to install Raspberry Pi OS, fix IP address and remote login.
 
-# **Preparations**
+## Preparations
 
-## 1.Install processing IDE
+### 1.Install processing IDE
 
 1.Processing Website：https://pi.processing.org/get-started/
 
-2\. Download processing IDE installation package <https://github.com/processing/processing/releases/download/processing-0269-3.5.3/processing-3.5.3-linux-armv6hf.tgz>
+2. Download processing IDE installation package <https://github.com/processing/processing/releases/download/processing-0269-3.5.3/processing-3.5.3-linux-armv6hf.tgz>
 
-### (1) Download
+####(1) Download
 
 You could download zip file to the download folder of Raspberry Pi.
 
@@ -18,7 +18,7 @@ Equally, you could save it into Downloads folder in the windows system, as shown
 
 ![](media/4eaf19cc66e9bf280f7466b3fbad9410.png)
 
-### (2) Unzip installation package
+#### (2) Unzip installation package
 
 Right-click it and select Extract Here.
 
@@ -50,7 +50,7 @@ Its interface is shown below:
 
 ![](media/a2d2aa31dfe59f7ac02d3c6f087b8766.png)
 
-## 2.Use Processing IDE
+### 2.Use Processing IDE
 
 Enter the code in the editor.
 
@@ -79,7 +79,7 @@ The wrong code is as follows:
 
 ![](media/81aaa8cd362ff420f45541ccb372984c.png)
 
-## 3.Copy Example Code to Raspberry Pi
+### 3.Copy Example Code to Raspberry Pi
 
 Copy the Processing-Code.zip to sketchbook folder and unzip it, as shown below:
 
@@ -88,13 +88,13 @@ Copy the Processing-Code.zip to sketchbook folder and unzip it, as shown below:
 ![](media/71e9e546e01bce892a350b53b8699e6e.png)
 
 
-# Projects
+## Projects
 
 **Note: G, - and GND marked on sensors and modules are so-called negative, which are connected to GND of GPIO extension board or “-” of breadboard; V、+、VCC are known as positive, which are interfaced 3V3 or 5V on extension board and“+”on breadboard**
 
-## Project 1：Print Hello World
+### Project 1：Print Hello World
 
-### Run example code：
+ Run example code：
 
 Input the following command and press“Enter”. Then Processing IDE will boot, click “RUN” processing /home/pi/sketchbook/Processing_Code/sketch_1_hello_world/sketch_1_hello_world.pde
 
@@ -106,13 +106,13 @@ Click ![](media/95c2534ba02b07937669836dd9b3a0bb.png) to find out the route：
 
 ![](media/0fa7aba880556affce823c15ddc49628.png)
 
-### Test Result：
+ Test Result：
 
 Input“hello world”in the control window and hello world！”appears in graphical display window, as shown below:
 
 ![](media/8d7932edd9031c50a299dd9afae0bfe3.png)
 
-### Example Code：
+ Example Code：
 
 ```java
 void setup() {  //execute only once when the program starts running
@@ -130,45 +130,45 @@ void draw() { //every frame is called once
 
 
 
-## Project 2：LED Blinks
+### Project 2：LED Blinks
 
-### Description：
+ Description：
 
 Let’s start from a rather basic and simple experiment----LED Blinks.
 
-### Component：
+ Component：
 
 | ![image-20230427104608787](media/image-20230427104608787.png) | ![](media/image-20230427104622574.png) | ![image-20230427104630834](media/image-20230427104630834.png) | ![image-20230427104654900](media/image-20230427104654900.png) | ![image-20230427104701485](media/image-20230427104701485.png) | ![image-20230427104707995](media/image-20230427104707995.png) | ![image-20230427104710848](media/image-20230427104710848.png) |
 | ------------------------------------------------------------ | -------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Raspberry Pi*1                                               | GPIO Extension Board*1                 | 40pin Colorful Jumper Wires*1                                | Breadboard*1                                                 | LED - Red *1                                                 | 220Ω Resistor*1                                              | Jumper Wires                                                 |
 
-### Knowledge
+ Knowledge
 
-#### **LED**: 
+ **LED**: 
 
 A light-emitting diode, the current is connected when anode(long pin) is connected to VCC, and cathode(short pin)is connected to GND. Its brightness is 2V and current is 6mA. LED must be connected to a resistor in the circuit, otherwise, the components will be burned.
 
-#### **Resistor**: 
+ **Resistor**: 
 
 we use a carbon film resistor, 220Ωand its accuracy is 5%, why choose 220Ω resistor?
 
 Since the high-level output voltage of GPIO pin of the Raspberry Pi is 3.3V, and the voltage of the LED is about 2V, and the current is about 6mA, we need to use a resistor to bear the voltage (3.3V-2V) = 1.3V, according to ohm The law: U/I = R knows: (3.3-2)/6 * 1000 ≈ 217Ω.
 
-#### **Breadboard**: 
+ **Breadboard**: 
 
 Below is a short instruction of breadboard. The holes on the board are connected. The inner board is structure diagram.
 
 ![](media/49dc0f2393ed6f04d8f4cc1239e96995.png)
 
-#### Working Principle：
+ Working Principle：
 
 The positive pole of LED is connected to GPIO18, when the pin of GPIO18 outputs 3.3V, LED will be on; when its pin outputs 0V, LED will be off.
 
-#### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/9d31d0ea6821d91e18f1360d36c3c742.png)
 
-### Connection Diagram
+ Connection Diagram
 
 **![](media/cff6263dc30aba5782cb38f7e8c0fe2e.png)**
 
@@ -176,19 +176,19 @@ Since the PIN numbers of GPIO Extension Board and RPi GPIO are same, the part of
 
 ![](media/86e444ee07fd33bfa2ca8d896e571117.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following command, press“Enter”and click“RUN”on Processing IDE
 
 processing /home/pi/sketchbook/Processing_Code/sketch_2_LED_Blinking/sketch_2_LED_Blinking.pde
 
-### Test Result：
+ Test Result：
 
 LED starts blinking and the background of display window varies with the state of LED, as shown below:
 
 ![](media/e6e204a099970e8461c825338d6e34f6.png)![](media/ca9b6a6f34e5ddc9b32454147879e8e2.png)
 
-### Example Code：
+ Example Code：
 
 ```java
 import processing.io.*;
@@ -222,29 +222,29 @@ The function of the above code is included in Processing Software. You could loo
 
 Equally, you could navigate the official website：http://processing.org/reference
 
-## Project 3：Mouse-controlled LED
+### Project 3：Mouse-controlled LED
 
-### Description：
+ Description：
 
 In this program, we will control the status of LED by mouse. The components, connection and schematic diagrams are same as the lesson 2.
 
-### Working Principle：
+ Working Principle：
 
 Left-click the display window, LED is on; right-click the display window, LED is off.
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following command, press“Enter”and click“RUN”on Processing IDE:
 
 processing /home/pi/sketchbook/Processing_Code/sketch_3_mouse_led/sketch_3_mouse_led.pde
 
-### Test Result：
+ Test Result：
 
 After running example code, LED is off and display window is gray color. Left-click the gray area, LED is on and window turns into red color; right-click display window, LED is off and its background color is gray-black color, as shown below:
 
 ![](media/c239eaf850ec002490a70e083178cd9e.png)![](media/6e862dae39d9e41af454ef4330395e21.png)![](media/a2b17865b7f35939a3367160d403510d.png)
 
-### Example Code：
+ Example Code：
 
 ```java
 import processing.io.*;
@@ -272,37 +272,37 @@ void draw() {
 
 
 
-## Project 4：Flow Light
+### Project 4：Flow Light
 
-### Description：
+ Description：
 
 What is flow light? Maybe you see it on the wall of buildings and billboards. It is a scene that LED gradually brightens then darkens one by one.
 
-### Component：
+ Component：
 
 | ![image-20230427110333136](media/image-20230427110333136.png) | ![image-20230427110336189](media/image-20230427110336189.png) | ![image-20230427110339261](media/image-20230427110339261.png) | ![image-20230427110341900](media/image-20230427110341900.png) | ![image-20230427110344928](media/image-20230427110344928.png) | ![image-20230427110347727](media/image-20230427110347727.png) | ![image-20230427110350445](media/image-20230427110350445.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Raspberry Pi*1                                               | GPIO Extension Board*1                                       | 40 pin Colorful Jumper Wires*1                               | Breadboard*1                                                 | LED - Red *8                                                 | 220Ω Resistor*8                                              | Jumper Wires                                                 |
 
-### Schematic and Wiring Diagram：
+ Schematic and Wiring Diagram：
 
 ![](media/ce96ac0e062033019ef22efed248d112.png)
 
 ![](media/510afde336376c085736faf14e74a83a.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following command, press“Enter”and click“RUN”on Processing IDE:
 
 processing /home/pi/sketchbook/Processing_Code/sketch_4_LED_Chasing_Effect/sketch_4_LED_Chasing_Effect.pde
 
-### Test Result：
+ Test Result：
 
 The rectangle will turn out to be red if you leave the mouse pointer on it, as shown below, you could make them display red color one by one, equally, the status of LED will vary with the rectangle’s.
 
 ![](media/2cdda88d4b6733dfd57f33db766be74a.png)
 
-### Example Code：
+ Example Code：
 
 ```java
 import processing.io.*;
@@ -338,19 +338,19 @@ void draw() {
 
 
 
-## Project 5：Breathing LED
+### Project 5：Breathing LED
 
-### Description：
+ Description：
 
 A“breathing LED” is a phenomenon where an LED's brightness smoothly changes from dark to bright and back to dark, continuing to do so and giving the illusion of an LED“breathing.” This phenomenon is similar to a lung breathing in and out. So how to control LED’s brightness? We need to take advantage of PWM.
 
-### Component：
+ Component：
 
 | ![image-20230427110520354](media/image-20230427110520354.png) | ![image-20230427110523487](media/image-20230427110523487.png) | ![image-20230427110526254](media/image-20230427110526254.png) | ![image-20230427110529328](media/image-20230427110529328.png) | ![image-20230427110532078](media/image-20230427110532078.png) | ![image-20230427110534830](media/image-20230427110534830.png) | ![image-20230427110537983](media/image-20230427110537983.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Raspberry Pi*1                                               | GPIO Extension Board*1                                       | 40 pin Colorful Jumper Wires*1                               | Breadboard*1                                                 | LED - Red *1                                                 | 220ΩResistor *1                                              | Jumper Wires                                                 |
 
-### Working Principle：
+ Working Principle：
 
 We use the PWM output of GPIO, PWM outputs analog signals and output value is 0~100 which is equivalent to output voltage 0~3.3V from GPIO port.
 
@@ -364,33 +364,33 @@ The time of high level output is pulse width whose percentage is called Duty Cyc
 
 Below chart is pulse width 50%, then the output voltage is 3.3 * 50% = 1.65V，the brightness of LED is medium.![](media/1ce12a5fbfdb0ea129bbbe0d2ffb9f2d.png)
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/9d31d0ea6821d91e18f1360d36c3c742.png)
 
-### **Connection Diagram**
+ **Connection Diagram**
 
 ![](media/86e444ee07fd33bfa2ca8d896e571117.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following the command and press“Enter”, open Processing IDE and click“RUN”
 
 processing /home/pi/sketchbook/Processing_Code/sketch_5_Breathing_LED/sketch_5_Breathing_LED.pde
 
-### 6Test Result：
+ 6Test Result：
 
 LED gradually brightens, and the color of red dot in the display window gets darker as well. progress bar can adjust the LED’s brightness, as shown below:
 
 ![](media/d1b295dcd8ad5aeb68b65ea61ccf21ee.png)
 
-### Example Code：
+ Example Code：
 
 Except main program code, there is a“SOFTPWM”custom page in processing software, as shown below:
 
 ![](media/3e5b900ce520e8a64ac679d96255fffc.png)
 
-### Test code
+ Test code
 
 ```java
 import processing.io.*;
@@ -467,7 +467,7 @@ void barLabelStyle() {
 }
 ```
 
-### Reference：
+ Reference：
 
 | class SOFTPWM                                  |                                                              |
 | ---------------------------------------------- | ------------------------------------------------------------ |
@@ -475,19 +475,19 @@ void barLabelStyle() {
 | public void softPwmWrite(int value)            | Set PMW Duty Cycle                                           |
 | public void softPwmStop()                      | Stop outputting PWM                                          |
 
-## Project 6：RGB
+### Project 6：RGB
 
-### Description：
+ Description：
 
 In this chapter, we will demonstrate how RGB lights show different colors via programming.
 
-### Component：
+ Component：
 
 | ![img](media/wps47.jpg) | ![image-20230427111100250](media/image-20230427111100250.png) | ![image-20230427111102983](media/image-20230427111102983.png) | ![image-20230427111105861](media/image-20230427111105861.png) | ![image-20230427111108295](media/image-20230427111108295.png) | ![image-20230427111111123](media/image-20230427111111123.png) | ![image-20230427111113527](media/image-20230427111113527.png) |
 | ----------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Raspberry Pi*1          | GPIO Extension Board*1                                       | 40 pin Colorful Jumper Wires*1                               | Breadboard*1                                                 | RGB - LED *1                                                 | 100Ω Resistor*3                                              | Jumper Wires                                                 |
 
-### **Working Principle：**
+ **Working Principle：**
 
 RGB LED integrated three LEDs emitting red,green and blue light. 
 
@@ -501,20 +501,20 @@ Red, green and blue are three primary colors. They could produce all kinds of vi
 
 Next, we will make a RGB LED displaying all kinds of colors
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/04d2937217700e739cd0c1febdd42351.png)
 
 ![](media/c342422f2ba2b27f6158e6163a3ccdaf.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following command, press“Enter”and click“RUN”on Processing IDE
 
 processing
 /home/pi/sketchbook/Processing_Code/sketch_6_RGB_led/sketch_6_RGB_led.pde
 
-### Test Result：
+ Test Result：
 
 RGB LED is off when the code is executed.
 
@@ -526,7 +526,7 @@ The color of RGB is as same as round dot.
 
 ![](media/ff5c109deb91f14fc4abaaa7cbdda73c.png)
 
-### Example Code：
+ Example Code：
 
 This project contains a lot of code files, the core code is contained in the file sketch_6_RGB_led.pde.
 
@@ -614,7 +614,7 @@ void titleAndSiteInfo() {
 }
 ```
 
-### Reference：
+ Reference：
 
 | class ProgressBar<br />(used to create progress bar)         |                                                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -623,43 +623,43 @@ void titleAndSiteInfo() {
 | public void setProgress**(**float pgress**)**                | Used to set the process of progress bar parameter：0\<pgress\<1.0. |
 | public void create**() &** public void create**(**float pgress**)** | Used to draw the progress bar                                |
 
-## Project 7：Active Buzzer
+### Project 7：Active Buzzer
 
-### Description：
+ Description：
 
 In this project, we will demonstrate how doorbell works.
 
-### Component：
+ Component：
 
 | ![img](media/wps54.jpg) | ![img](media/wps55.jpg) | ![img](media/wps56.jpg)        | ![img](media/wps57.jpg) | ![img](media/wps58.jpg) | ![img](media/wps59.jpg) |
 | ----------------------- | ----------------------- | ------------------------------ | ----------------------- | ----------------------- | ----------------------- |
 | Raspberry Pi*1          | GPIO Extension Board*1  | 40 pin Colorful Jumper Wires*1 | Breadboard*1            | Active Buzzer *1        | Jumper Wires            |
 
-### Component Knowledge：
+ Component Knowledge：
 
 **Active buzzer：**
 
 An active buzzer will generate a tone using an internal oscillator, so all that is needed is a DC voltage. A passive buzzer requires an AC signal to make a sound. It is like an electromagnetic speaker, where a changing input signal produces the sound, rather than producing a tone automatically.
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/b06de1373052e0b1150f1bb26cceb3d8.png)
 
 ![](media/bb0e971180ad71dfbd78999e52b45152.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following command, press“Enter”and click“RUN”on Processing IDE:
 
 processing/home/pi/sketchbook/Processing_Code/sketch_7_active_buzzer/sketch_7_active_buzzer.pde
 
-### Test Result：
+ Test Result：
 
 Click any area of display window, active buzzer emits sound and the icon on display window varies with the status of active buzzer
 
 ![](media/71346503246001acbfca999dd06ce1f2.png)
 
-### Example Code：
+ Example Code：
 
 ```java
 import processing.io.*;
@@ -712,9 +712,9 @@ void titleAndSiteInfo() {
 
 
 
-## Project 8：Button-controlled LED
+### Project 8：Button-controlled LED
 
-### Description：
+ Description：
 
 Usually, a complete open loop control is made of external information input. Controller and actuator.
 
@@ -724,7 +724,7 @@ The external information is input into controller which can analyze the input da
 
 A button-controlled LED is decided by an open loop control. Next, we will make a desk lamp with a button, an LED and R Pi. LED is on when button is pressed, on the contrary, it will be off.
 
-### Component：
+ Component：
 
 | ![img](media/wps60.jpg) | ![img](media/wps61.jpg) | ![img](media/wps56.jpg)        | ![img](media/wps63.jpg) | ![img](media/wps64.jpg) |
 | ----------------------- | ----------------------- | ------------------------------ | ----------------------- | ----------------------- |
@@ -732,7 +732,7 @@ A button-controlled LED is decided by an open loop control. Next, we will make a
 | ![img](media/wps65.jpg) | ![img](media/wps66.jpg) | ![img](media/wps67.jpg)        | ![img](media/wps68.jpg) |                         |
 | 220Ω Resistor*1         | Jumper Wires            | 10KΩ Resistor*1                | Button Switch *1        |                         |
 
-### Component Knowledge：
+ Component Knowledge：
 
 **Button Switch:**
 
@@ -750,13 +750,13 @@ Resistor could stabilize the electronic signal and protect circuit.
 
 The circuit will be shorten and components will be burnt if without wiring 10kΩ resistor, as shown below;
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/56df70c171335f4e2432a1e1eb4bb4ab.png)
 
 ![](media/eb5b50bc4a31b3d370d9ddff64b452a9.png)
 
-### Eliminate Button Shaking
+ Eliminate Button Shaking
 
 The LED status won’t jump into new state immediately when button is pressed. There will be a short continuous shaking before into new status, which is similar with release status.
 
@@ -766,19 +766,19 @@ Therefore, there will be many a presses and release actions. The shaking will mi
 
 The button means being pressed when its status is stable.
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following command, press“Enter”and click“RUN”on Processing IDE
 
 processing/home/pi/sketchbook/Processing_Code/sketch_8_button_led/sketch_8_button_led.pde
 
-### Test Result：
+ Test Result：
 
 After running example code, the display window is dark gray color. Press button, LED is on and window turns into red color; Press button again, LED is off and its background color is dark gray color, as shown below:
 
 ![](media/e6e204a099970e8461c825338d6e34f6.png)![](media/ca9b6a6f34e5ddc9b32454147879e8e2.png)
 
-### Example Code：
+ Example Code：
 
 ```java
 import processing.io.*;
@@ -827,13 +827,13 @@ void draw() {
 
 
 
-## Project 9：PIR Motion Sensor
+### Project 9：PIR Motion Sensor
 
-### Description：
+ Description：
 
 In this lesson, we will learn about PIR motion sensor.
 
-### Component：
+ Component：
 
 | ![img](media/wps69.jpg) | ![img](media/wps70.jpg) | ![img](media/wps71.jpg)        | ![img](media/wps72.jpg) | ![img](media/wps73.jpg) |
 | ----------------------- | ----------------------- | ------------------------------ | ----------------------- | ----------------------- |
@@ -841,7 +841,7 @@ In this lesson, we will learn about PIR motion sensor.
 | ![img](media/wps74.jpg) | ![img](media/wps75.png) | ![img](media/wps76.jpg)        |                         |                         |
 | 220Ω Resistor*1         | PIR Motion Sensor*1     | Jumper Wires                   |                         |                         |
 
-### Component Knowledge：
+ Component Knowledge：
 
 **PIR Motion Sensor：**
 
@@ -851,19 +851,19 @@ Human body will emit IR ray, although weak but can be detected. Sensor will outp
 
 Note: Nothing but moving person can be detected, with the detection distance is up to 3m.
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/141d346dc2bd7d36c1478faff22908b6.png)
 
 ![](media/b0a265ba193a9879fb34c45f24ae9c4f.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following command, press “Enter”and click“RUN”on Processing IDE
 
 processing/home/pi/sketchbook/Processing_Code/sketch_9_PIR_led/sketch_9_PIR_led.pde
 
-### Test Result：
+ Test Result：
 
 If PIR motion sensor doesn’t detect moving person, LED will be off and display window will show black dot and“Nobody”; on the contrary, LED will be on, and window will show red dot and “Somebody”, as shown below:
 
@@ -871,7 +871,7 @@ If PIR motion sensor doesn’t detect moving person, LED will be off and display
 
 ![](media/daf7d3b42ef09ef72426db9b4fda5f84.png)
 
-### Example Code：
+ Example Code：
 
 ```java
 import processing.io.*;
@@ -916,13 +916,13 @@ void titleAndSiteInfo() {
 
 
 
-## Project 10：Fire Alarm
+### Project 10：Fire Alarm
 
-### Description：
+ Description：
 
 A flame detector is a sensor designed to detect and respond to the presence of a flame or fire, allowing flame detection.
 
-### Component：
+ Component：
 
 | ![img](media/wps77.jpg) | ![img](media/wps78.jpg) | ![img](media/wps79.jpg)        | ![img](media/wps80.jpg) | ![img](media/wps81.jpg) |
 | ----------------------- | ----------------------- | ------------------------------ | ----------------------- | ----------------------- |
@@ -930,7 +930,7 @@ A flame detector is a sensor designed to detect and respond to the presence of a
 | ![img](media/wps82.jpg) | ![img](media/wps83.jpg) | ![img](media/wps84.jpg)        |                         |                         |
 | Flame Sensor *1         | 10KΩ Resistor*1         | Jumper Wires                   |                         |                         |
 
-### Component Knowledge：
+ Component Knowledge：
 
 **Flame Sensor：**
 
@@ -940,25 +940,25 @@ Flame sensor is used to detect fire source with wavelength in 760nm～1100nm, de
 
 Notice that keep flame sensor away from fire source to defend its damage for its working temperature is between -25°-85°
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/cf920e1d7db7c5905292baa2e01eb268.png)
 
 ![](media/fce67c08fbe3c0aa4a550d2859c7e58a.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following command, press“Enter”and click“RUN”on Processing IDE
 
 processing/home/pi/sketchbook/Processing_Code/sketch_10_flame_buzzer/sketch_10_flame_buzzer.pde
 
-### Test Result：
+ Test Result：
 
 Active buzzer will emit sound and window display will show arc lines and“Fire”as follows, when flame is detected; otherwise, active buzzer won’t emit sound, arc lines and“Fire”will disappear.
 
 ![](media/671cd1ba22b1ca3a32a378444d168acd.png)
 
-### Example Code：
+ Example Code：
 
 ```java
 import processing.io.*;
@@ -1015,13 +1015,13 @@ void titleAndSiteInfo() {
 
 
 
-## Project 11：74HC595 & 1-digit Segment Display
+### Project 11：74HC595 & 1-digit Segment Display
 
-### Description：
+ Description：
 
 In previous lesson, we control a 1-digit LED display with eight, which is wasteful. We need to figure out a method to save the use of GPIO ports. In fact, we need a 74HC595 CHIP.
 
-### Component：
+ Component：
 
 | ![img](media/wps85.jpg) | ![img](media/wps86.jpg) | ![img](media/wps87.jpg)        | ![img](media/wps88.jpg) | ![img](media/wps89.jpg) |
 | ----------------------- | ----------------------- | ------------------------------ | ----------------------- | ----------------------- |
@@ -1050,7 +1050,7 @@ The 74HC595 consists of an 8−bit shift register and an 8−bit D−type latch 
 
 More details about 74HC595 chip, you could look through chip specification folder
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/217d295bf815c6bfaba5c8085f308068.png)
 
@@ -1075,19 +1075,19 @@ Why? Since the binary is counted from the right, programming will be convenient.
 | **8**   | 1  | 1  | 1  | 1  | 1  | 1  | 1  | 0  | **254** |
 | **9**   | 1  | 1  | 1  | 1  | 0  | 1  | 1  | 0  | **246** |
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following command, press “Enter”and click“RUN”on Processing IDE
 
 processing/home/pi/sketchbook/Processing_Code/sketch_11_74HC595_one_digital_LED/sketch_11_74HC595_one_digital_LED.pde
 
-### Test Result：
+ Test Result：
 
 Display window will show“0-9”, and you could increase the change speed of numbers by dragging progress bar, as shown below
 
 ![](media/8408cf7595161be3fc0c06aef3e35044.png)
 
-### Example Code：
+ Example Code：
 
 This program includes many code files, the core code is sketch_11_74HC595_one_digital_LED.pde, other files are customized, as shown below:
 
@@ -1172,13 +1172,13 @@ loadFont() Reference:
 
 <https://processing.org/reference/loadFont_.html>
 
-## Project 12：74HC595 & 4-digit Segment Display
+### Project 12：74HC595 & 4-digit Segment Display
 
-### Description：
+ Description：
 
 In previous lesson, the LED display only shows 1 digit number, whereas, we could try to operate 4 digit LED display.
 
-### Component：
+ Component：
 
 | ![img](media/wps101.jpg) | ![img](media/wps102.jpg) | ![img](media/wps103.jpg)       | ![img](media/wps104.jpg) | ![img](media/wps105.jpg) |
 | ------------------------ | ------------------------ | ------------------------------ | ------------------------ | ------------------------ |
@@ -1198,26 +1198,26 @@ Pin 1, 2, 3 and 4 are control pin of control bit
 
 ![](media/ea75d1b7414bf6f8c187fb32fea9bc83.png)
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/c4fc48d4bf45b7059492daa36fc7b5f5.png)
 
 ![](media/79dee41bf2ba950545e3088660de5857.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following command, press“Enter”and click“RUN”on Processing IDE
 
 processing
 /home/pi/sketchbook/Processing_Code/sketch_12_74HC595_four_digital_LED/sketch_12_74HC595_four_digital_LED.pde
 
-### Test Result：
+ Test Result：
 
 The number in the window is as same as the number on 4-digit 7-segment display. The window continuously displays the number from 0 to 9999. Dragging the progress bar can change the display speed of number, as shown below:
 
 ![](media/5e23700e7461c857197321cd6984d4a8.png)
 
-### Example Code：
+ Example Code：
 
 ![](media/ab3c3f73f2b9e1bba58128cd798620c7.png)
 
@@ -1330,13 +1330,13 @@ void titleAndSiteInfo() {
 
 
 
-## Project 13：Potentiometer
+### Project 13：Potentiometer
 
-### Description：
+ Description：
 
 In this project, we will read the voltage value by PCF8591 A/D Converter Module and display it in the window.
 
-### Component：
+ Component：
 
 | ![img](media/wps109.jpg)       | ![img](media/wps110.jpg) | ![img](media/wps111.jpg)       | ![img](media/wps112.jpg) |      |
 | ------------------------------ | ------------------------ | ------------------------------ | ------------------------ | ---- |
@@ -1344,7 +1344,7 @@ In this project, we will read the voltage value by PCF8591 A/D Converter Module 
 | ![img](media/wps114.jpg)       | ![img](media/wps115.jpg) | ![img](media/wps113.jpg)       |                          |      |
 | PCF8591 A/D Converter Module*1 | Jumper Wires             | Potentiometer*1                |                          |      |
 
-### Component Knowledge：
+ Component Knowledge：
 
 **Keyestudio PCF8591 A/D Converter Module：**
 
@@ -1384,7 +1384,7 @@ Used to read the address of pin A0\~A3.
 
 The address of analog output pin AOUT: 0x40, that is, 64 converting from hexadecimal to decimal
 
-A0 = 0x40 \#\#A0 ----\> port address
+A0 = 0x40 \##\##A0 ----\> port address
 
 A1 = 0x41
 
@@ -1400,7 +1400,7 @@ We could convert the resistance’s change into the voltage’s when setting cir
 
 Wiring according to the below figure and rotate clockwise, resistance value reduces.
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/87f632c39b0360057fa161c3ae5e1c8f.png)
 
@@ -1408,20 +1408,20 @@ Wiring according to the below figure and rotate clockwise, resistance value redu
 
 Note: PCF8591 module comes with an LED connected to Aout pint
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following command, press“Enter”and click“RUN”on Processing IDE
 
 processing
 /home/pi/sketchbook/Processing_Code/sketch_13_potentiometer/sketch_13_potentiometer.pde
 
-### Test Result：
+ Test Result：
 
 Window shows voltage value and ADC value. You could change the output voltage by rotating the potentiometer, as shown below:
 
 ![](media/de94edaaf02d7ff5cf5f844daac8adb3.png)
 
-### Example Code：
+ Example Code：
 
 This program includes many code files, the core code is included in sketch_13\_potentiometer.pde file, others are customized, as shown below:
 
@@ -1465,7 +1465,7 @@ void titleAndSiteInfo() {
 }
 ```
 
-### Reference：
+ Reference：
 
 | **class ADCDevice**                        | （This is a base class which means all ADC module class is its subclass . And it provides two basic member functions.) |
 | ------------------------------------------ | ------------------------------------------------------------ |
@@ -1477,13 +1477,13 @@ void titleAndSiteInfo() {
 | public byte**[ ]** analogRead**( )**       | Read the value of ADC on all channels on PCF8591             |
 | public void analogWrite**(**int data**)**  | Input DAC value to PCF8591                                   |
 
-## Project 14：Photoresistor
+### Project 14：Photoresistor
 
-### Description：
+ Description：
 
 Photo resistor (Photovaristor) is a resistor whose resistance varies according to different incident light strength. It's made based on the photoelectric effect of semiconductor. In this lesson, let’s explain how it works.
 
-### Component：
+ Component：
 
 | ![img](media/wps116.jpg) | ![img](media/wps117.jpg) | ![img](media/wps118.jpg)       | ![img](media/wps119.jpg)       | ![img](media/wps120.jpg) |
 | ------------------------ | ------------------------ | ------------------------------ | ------------------------------ | ------------------------ |
@@ -1491,7 +1491,7 @@ Photo resistor (Photovaristor) is a resistor whose resistance varies according t
 | ![img](media/wps121.jpg) | ![img](media/wps122.jpg) | ![img](media/wps123.jpg)       | ![img](media/wps124.jpg)       | ![img](media/wps125.jpg) |
 | 220Ω Resistor*1          | Photo Resistor*1         | 10KΩ Resistor*1                | PCF8591 A/D Converter Module*1 | Jumper Wires             |
 
-### Component Knowledge
+ Component Knowledge
 
 **Photoresistor：**
 
@@ -1499,13 +1499,13 @@ Photo resistor (Photoraristor) is a resistor whose resistance varies according t
 
 If incident light on a photoresistor exceeds a certain frequency, photons absorbed by the semiconductor give bound electrons enough energy to jump into the conduction band. The resulting free electrons (and their hole partners) conduct electricity, thereby lowering resistance. 
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/62d7ded39ba13d8789248e93165013ae.png)
 
 ![](media/b92c4cb38844f1ee074779eae270d650.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Note: in the experiment, I2C communication is used. We need to check the iic address first( enter command：i2cdetect -y 1 and press“Enter”. If failed, check the wiring is correct or not. If correct, you need to enable I2C communication function of Raspberry Pi, project 13 is for your reference.
 
@@ -1513,13 +1513,13 @@ After enabling the I2C communication function, input the following command, pres
 
 processing/home/pi/sketchbook/Processing_Code/sketch_14_photo_resistor/sketch_14_photo_resistor.pde
 
-### Test Result：
+ Test Result：
 
 Display window will show the voltage value, ADC value and LED icon. You could change voltage value and its brightness by changing the light intensity of photoresistor,as shown below:
 
 ![](media/4e54f9092e6eea7b9a1b578b59b7f89a.png)
 
-### Example Code：
+ Example Code：
 
 This program includes many code files, the core code is included in sketch_14_photo_resistor.pde file, others are customized, as shown below:
 
@@ -1571,13 +1571,13 @@ void titleAndSiteInfo() {
 
 
 
-## Project 15：Water Level Monitor
+### Project 15：Water Level Monitor
 
-### Description：
+ Description：
 
 If you have ever had a water heater explode or ever tried to make submersible electronics, then you know how important it is to detect when water is around. Let’s know more about water level sensor.
 
-### Component:
+ Component:
 
 | ![img](media/wps126.jpg) | ![img](media/wps127.jpg)       | ![img](media/wps128.jpg)       | ![img](media/wps129.jpg) | ![img](media/wps130.jpg) |
 | ------------------------ | ------------------------------ | ------------------------------ | ------------------------ | ------------------------ |
@@ -1585,7 +1585,7 @@ If you have ever had a water heater explode or ever tried to make submersible el
 | ![img](media/wps131.jpg) | ![img](media/wps132.jpg)       | ![img](media/wps133.jpg)       | ![img](media/wps134.png) |                          |
 | Water sensor * 1         | PCF8591 A/D Converter Module*1 | Jumper Wires                   | M-F Dupont Line          |                          |
 
-### Component Knowledge
+ Component Knowledge
 
 **Water Level Sensor：**
 
@@ -1595,12 +1595,12 @@ This sensor measures the volume of water drop and water quantity through an arra
 
 It could convert water content to analog signals, and output analog value could be used by function of application. It has the features of low consumption as well.
 
-### Schematic and Connection Diagram：
+ Schematic and Connection Diagram：
 
 ![](media/d0b751b8110bac27f1aba11c1e8b7abe.png)
 ![](media/b7c0b634e88a8682a338a261c48eb0ab.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Note: in the experiment, I2C communication is used. We need to check the iic address first(enter command：i2cdetect -y 1 and press“Enter”. If failed, check the wiring is correct or not. If correct, you need to enable I2C communication function of Raspberry Pi, project 13 is for your reference.
 
@@ -1608,7 +1608,7 @@ After enabling the I2C communication function，Input the following command, pre
 
 processing /home/pi/sketchbook/Processing_Code/sketch_15_water_buzzer/sketch_15_water_buzzer.pde
 
-### Test Result：
+ Test Result：
 
 The window will show the voltage value, ADC value and buzzer icon after executing code.
 
@@ -1616,7 +1616,7 @@ The voltage value and ADC value vary with the depth of water level sensor in the
 
 ![](media/ffa849e7085e7b51341bd03a8337c357.png)
 
-### Example Code：
+ Example Code：
 
 This program includes a few code files, the core code is in the sketch_15_water_buzzer.pde,other files consist of some customized ones, as shown below:
 
@@ -1691,13 +1691,13 @@ void titleAndSiteInfo() {
 
 
 
-## Project 16：L293D Driver Motor
+### Project 16：L293D Driver Motor
 
-### Description：
+ Description：
 
 In generally, we use a DC motor to make smart car. What should we do if we want to control the rotation speed and direction? Here, we need an L293D driver motor.
 
-### Components:
+ Components:
 
 | ![img](media/wps135.jpg) | ![img](media/wps136.jpg) | ![img](media/wps137.jpg)       | ![img](media/wps138.jpg) | ![img](media/wps139.jpg) |
 | ------------------------ | ------------------------ | ------------------------------ | ------------------------ | ------------------------ |
@@ -1705,7 +1705,7 @@ In generally, we use a DC motor to make smart car. What should we do if we want 
 | ![img](media/wps140.jpg) | ![img](media/wps141.jpg) | ![img](media/wps142.png)       |                          |                          |
 | L293D Chip*1             | Fan                      | Motor*1                        |                          |                          |
 
-### Component Knowledge:
+ Component Knowledge:
 
 **L293D Chip:**
 
@@ -1719,7 +1719,7 @@ The two-channel motor can be driven and rotate clockwise and anticlockwise when 
 
 ![](media/2e5e0bd5b4577ac159d0568404dc21b5.png)
 
-|  \#  | Pin Name | Description                                         |
+|  \##  | Pin Name | Description                                         |
 | :--: | :------: | --------------------------------------------------- |
 |  1   | Enable1  | Enable pin input 1(2) and Input 2(7)                |
 |  2   |   In1    | Control output1 and controlled  by digital circuit  |
@@ -1738,19 +1738,19 @@ The two-channel motor can be driven and rotate clockwise and anticlockwise when 
 |  15  |   In4    | Control output 4 and controlled by  digital circuit |
 |  16  |    +V    | Connect to + 5V to enable IC function               |
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/88f9ff66e98070062caa1d4695895d44.png)
 
 ![](media/980102d2b59a950e13401394f6b8dcc2.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following command, press“Enter”and click“RUN”on Processing IDE
 
 processing/home/pi/sketchbook/Processing_Code/sketch_16_L293D_motor/sketch_16_L293D_motor.pde
 
-### Test Result：
+ Test Result：
 
 Window will shows a virtual fan, a green button and progress bar. The rotation speed of fan will change when dragging the progress bar. The rotation direction of motor is decided by green button, as shown below:
 
@@ -1758,7 +1758,7 @@ Window will shows a virtual fan, a green button and progress bar. The rotation s
 
 ![](media/9b6c74c62490345883474245558d4f6c.png)
 
-### Example Code：
+ Example Code：
 
 This program includes a few code files, the core code is in the sketch_16_L293D_motor.pde file,other files consist of some customized ones, as shown below:
 
@@ -1857,7 +1857,7 @@ void titleAndSiteInfo() {
 }
 ```
 
-### Reference：
+ Reference：
 
 | class MOTOR                                                  | （this is a custom class class which is used to control motor connected to L293D) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -1870,13 +1870,13 @@ void titleAndSiteInfo() {
 | public void setText**(**String str**)**                      | Used to set the button text                                  |
 | public void setTextColor**(**int ir**,** int ig**,** int ib**)** | Used to set text color                                       |
 
-## Project 17：Glutton Snake
+### Project 17：Glutton Snake
 
-### Description：
+ Description：
 
 Most of us have played the classical game-glutton snake, in this program, let’s create our own game.
 
-### Component:
+ Component:
 
 | ![img](media/wps143.jpg) | ![img](media/wps144.jpg) | ![img](media/wps145.jpg)       | ![img](media/wps146.jpg) |
 | ------------------------ | ------------------------ | ------------------------------ | ------------------------ |
@@ -1884,19 +1884,19 @@ Most of us have played the classical game-glutton snake, in this program, let’
 | ![img](media/wps147.jpg) | ![img](media/wps148.jpg) | ![img](media/wps149.jpg)       |                          |
 | 10KΩ Resistor*4          | Button Switch *4         | Jumper Wires                   |                          |
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/99d82f4d8f3800095c0997eccc797864.png)
 
 ![](media/627cc4c80d6812e517c3af9d03dbeb52.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following command, press“Enter”and click“RUN”on Processing IDE
 
 processing /home/pi/sketchbook/Processing_Code/sketch_17_Snake_Game/sketch_17_Snake_Game.pde
 
-### Test Result：
+ Test Result：
 
 The display window is shown below:
 
@@ -1914,7 +1914,7 @@ You can move the blocks around, either left to right via four buttons or up/down
 
 You could restart the game any time when pressing space.
 
-### Example Code：
+ Example Code：
 
 This project consists of a few code files, as shown below:
 
@@ -2073,13 +2073,13 @@ void transAction() {
 
 
 
-## Project 18：Teris
+### Project 18：Teris
 
-### Description：
+ Description：
 
 In this lesson, we will produce a game-----Teris
 
-### Components:
+ Components:
 
 | ![img](media/wps150.jpg) | ![img](media/wps151.jpg) | ![img](media/wps152.jpg)       | ![img](media/wps153.jpg) |
 | ------------------------ | ------------------------ | ------------------------------ | ------------------------ |
@@ -2087,19 +2087,19 @@ In this lesson, we will produce a game-----Teris
 | ![img](media/wps154.jpg) | ![img](media/wps155.jpg) | ![img](media/wps156.jpg)       |                          |
 | 10KΩ Resistor*4          | Button Switch *4         | Jumper Wires                   |                          |
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/99d82f4d8f3800095c0997eccc797864.png)
 
 ![](media/627cc4c80d6812e517c3af9d03dbeb52.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following command, press“Enter”and click“RUN”on Processing IDE
 
 processing /home/pi/sketchbook/Processing_Code/sketch_18_Tetris_Game/sketch_18_Tetris_Game.pde
 
-### Test Result：
+ Test Result：
 
 The window shows as follows:
 
@@ -2272,16 +2272,4 @@ void transAction() {
 
 
 
-# Resources：
 
-1.  <https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/6>
-
-2.  <https://wiki.keyestudio.com/KS3001(3002,_3003,.....3012%EF%BC%89Raspberry_Pi_Complete_Device_Kit>
-
-3.  <https://www.raspberrypi.org/documentation/installation/installing-images/README.md>
-
-4.  <https://www.raspberrypi.org/software/>
-
-5.  <https://pi.processing.org/get-started/>
-
-6.  [https://pi.processing.org/](https://pi.processing.org/)

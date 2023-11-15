@@ -1,6 +1,6 @@
-# **KS3013 Raspberry Pi Basic Starter Kit Python**
+# **Python tutorials**
 
-# 1. Preparations for Python
+## Preparations for Python
 
 Python is a programming language that lets you work more quickly and integrate your systems more effectively.
 
@@ -9,7 +9,7 @@ Python is an interpreted, high-level and general-purpose programming language. P
 Next to pick up Python to control 40 pin of Raspberry Pi.
 
 
-### Copy Example Code Folder to Raspberry Pi：
+ Copy Example Code Folder to Raspberry Pi：
 
 Place example code folder to the pi folder of Raspberry Pi. and extract the example code from pythonCode_A zip file, as shown below:
 
@@ -55,11 +55,11 @@ The other way is to open terminal directly, input the following commands and pre
 
 ![](media/02792a61a9f23c015aa84fcc739a72fc.png)
 
-# 2. Detailed Projects
+## Detailed Projects
 
 **Note: G, - and GND marked on sensors and modules are so-called negative, which are connected to GND of GPIO extension board or “-” of breadboard; V、+、VCC are known as positive, which are interfaced 3V3 or 5V on extension board and“+”on breadboard.**
 
-## Project 1：Python3 Shell
+### Project 1：Python3 Shell
 
 Use windows remote desktop connection to enter the page of Raspberry Pi, then open its terminal.
 
@@ -87,13 +87,13 @@ Input exit() to exit python3 shell
 
 ![](media/8eca404792bd60a4a7f190ce0e44dfb8.png)
 
-## Project 2：LED Blink
+### Project 2：LED Blink
 
-### Description：
+ Description：
 
 Let’s start from a rather basic and simple experiment----LED Blink
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) | ![](media/c5aadd2106124e3a345af17ce33176ca.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------- |
@@ -101,7 +101,7 @@ Let’s start from a rather basic and simple experiment----LED Blink
 | ![cd25a4727c48f7d48aa0160cc54ecafb](media/cd25a4727c48f7d48aa0160cc54ecafb.png) | ![image-20230525133140409](media/image-20230525133140409.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              |                                                 |
 | LED - Red *1                                                 | 220Ω Resistor*1                                              | Jumper Wires                                                 |                                                 |
 
-### Component Description：
+ Component Description：
 
 **LED**: 
 
@@ -119,11 +119,11 @@ Below is a short instruction of breadboard. The holes on the board are connected
 
 ![](media/49dc0f2393ed6f04d8f4cc1239e96995.png)
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/9d31d0ea6821d91e18f1360d36c3c742.png)
 
-### **Connection Diagram**
+ **Connection Diagram**
 
 ![](media/cff6263dc30aba5782cb38f7e8c0fe2e.png)
 
@@ -131,11 +131,11 @@ Since the PIN numbers of GPIO Extension Board and RPi GPIO are same, the part of
 
 ![](media/86e444ee07fd33bfa2ca8d896e571117.png)
 
-### Working Principle：
+ Working Principle：
 
 The positive pole of LED is connected to GPIO18, when the pin of GPIO18 outputs 3.3V, LED will be on; when its pin outputs 0V, LED will be off.
 
-### Run Example Code
+ Run Example Code
 
 Input the following commands in the terminal and press“Enter”
 
@@ -157,24 +157,24 @@ Note: Press Ctrl + C on keyboard and exit code running
 import RPi.GPIO as GPIO
 import time
 
-ledPin = 18  #define led pin
+ledPin = 18  ##define led pin
 
-GPIO.setmode(GPIO.BCM)        # use BCM numbers
-GPIO.setup(ledPin,GPIO.OUT)   #set the ledPin OUTPUT mode
-GPIO.output(ledPin,GPIO.LOW)  # make ledPin output LOW level
+GPIO.setmode(GPIO.BCM)        ## use BCM numbers
+GPIO.setup(ledPin,GPIO.OUT)   ##set the ledPin OUTPUT mode
+GPIO.output(ledPin,GPIO.LOW)  ## make ledPin output LOW level
 
-while True:    #loop
-    GPIO.output(ledPin,GPIO.HIGH)  #turn on led
-    print("turned on the led")  #Print in the terminal
-    time.sleep(1)              #wait for 1 second
-    GPIO.output(ledPin,GPIO.LOW)   #turn off led
+while True:    ##loop
+    GPIO.output(ledPin,GPIO.HIGH)  ##turn on led
+    print("turned on the led")  ##Print in the terminal
+    time.sleep(1)              ##wait for 1 second
+    GPIO.output(ledPin,GPIO.LOW)   ##turn off led
     print("turned off the led")
     time.sleep(1)
 
-GPIO.cleanup()    #release all GPIO
+GPIO.cleanup()    ##release all GPIO
 ```
 
-### Explanation：
+ Explanation：
 
 **While**
 
@@ -198,13 +198,13 @@ Import time library, time.sleep(1) means waiting for a second, more resource：
 
 [https://sourceforge.net/p/raspberry-gpio-python/wiki/Examples/](https://sourceforge.net/p/raspberry-gpio-python/wiki/Examples/)
 
-## Project 3：SOS Light
+### Project 3：SOS Light
 
-### Description：
+ Description：
 
 S.O.S is a Morse code distress signal , used internationally, that was originally established for maritime use. We will present it with flashing LED
 
-### Components:
+ Components:
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) | ![](media/c5aadd2106124e3a345af17ce33176ca.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------- |
@@ -212,15 +212,15 @@ S.O.S is a Morse code distress signal , used internationally, that was originall
 | ![cd25a4727c48f7d48aa0160cc54ecafb](media/cd25a4727c48f7d48aa0160cc54ecafb.png) | ![image-20230525133140409](media/image-20230525133140409.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              |                                                 |
 | LED - Red *1                                                 | 220ΩResistor*1                                               | Jumper Wires                                                 |                                                 |
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/9d31d0ea6821d91e18f1360d36c3c742.png)
 
-### Connection Diagram:
+ Connection Diagram:
 
 ![](media/86e444ee07fd33bfa2ca8d896e571117.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter"
 
@@ -242,36 +242,36 @@ LED flashes quickly for three times, three times slowly and quickly three times,
 import RPi.GPIO as GPIO
 import time
 
-ledPin = 18  #define led pin
+ledPin = 18  ##define led pin
 i1 = 0
 i2 = 0
 i3 = 0
 
-GPIO.setmode(GPIO.BCM)        # use BCM numbers
-GPIO.setup(ledPin,GPIO.OUT)   #set the ledPin OUTPUT mode
-GPIO.output(ledPin,GPIO.LOW)  # make ledPin output LOW level
+GPIO.setmode(GPIO.BCM)        ## use BCM numbers
+GPIO.setup(ledPin,GPIO.OUT)   ##set the ledPin OUTPUT mode
+GPIO.output(ledPin,GPIO.LOW)  ## make ledPin output LOW level
 
-while True:    #loop
+while True:    ##loop
     while(i1<3):
-        GPIO.output(ledPin,GPIO.HIGH)  #turn on led
-        time.sleep(0.1)              #wait for 1 second
-        GPIO.output(ledPin,GPIO.LOW)   #turn off led
+        GPIO.output(ledPin,GPIO.HIGH)  ##turn on led
+        time.sleep(0.1)              ##wait for 1 second
+        GPIO.output(ledPin,GPIO.LOW)   ##turn off led
         time.sleep(0.1)
         print(".")
         i1 += 1
     
     while(i2<3):
-        GPIO.output(ledPin,GPIO.HIGH)  #turn on led
-        time.sleep(1)              #wait for 1 second
-        GPIO.output(ledPin,GPIO.LOW)   #turn off led
+        GPIO.output(ledPin,GPIO.HIGH)  ##turn on led
+        time.sleep(1)              ##wait for 1 second
+        GPIO.output(ledPin,GPIO.LOW)   ##turn off led
         time.sleep(1)
         print("_")
         i2 += 1
     
     while(i3<3):
-        GPIO.output(ledPin,GPIO.HIGH)  #turn on led
-        time.sleep(0.1)              #wait for 1 second
-        GPIO.output(ledPin,GPIO.LOW)   #turn off led
+        GPIO.output(ledPin,GPIO.HIGH)  ##turn on led
+        time.sleep(0.1)              ##wait for 1 second
+        GPIO.output(ledPin,GPIO.LOW)   ##turn off led
         time.sleep(0.1)
         print(".")
         i3 += 1
@@ -281,18 +281,18 @@ while True:    #loop
     i3 = 0
     
 
-GPIO.cleanup()    #release all GPIO
+GPIO.cleanup()    ##release all GPIO
 ```
 
 
 
-## Project 4：Breathing LED
+### Project 4：Breathing LED
 
-### Description：
+ Description：
 
 A“breathing LED”is a phenomenon where an LED's brightness smoothly changes from dark to bright and back to dark, continuing to do so and giving the illusion of an LED“breathing.”This phenomenon is similar to a lung breathing in and out. So how to control LED’s brightness? We need to take advantage of PWM.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) | ![](media/c5aadd2106124e3a345af17ce33176ca.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------- |
@@ -300,7 +300,7 @@ A“breathing LED”is a phenomenon where an LED's brightness smoothly changes f
 | ![cd25a4727c48f7d48aa0160cc54ecafb](media/cd25a4727c48f7d48aa0160cc54ecafb.png) | ![image-20230525133140409](media/image-20230525133140409.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              |                                                 |
 | LED - Red *1                                                 | 220ΩResistor *1                                              | Jumper Wires                                                 |                                                 |
 
-### Working Principle：
+ Working Principle：
 
 We use the PWM output of GPIO, PWM outputs analog signals and output value is 0~100 which is equivalent to output voltage 0~3.3V from GPIO port.
 
@@ -316,15 +316,15 @@ Below chart is pulse width 50%, then the output voltage is 3.3 * 50% = 1.65V，t
 
 ![](media/1ce12a5fbfdb0ea129bbbe0d2ffb9f2d.png)
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/9d31d0ea6821d91e18f1360d36c3c742.png)
 
-### **Connection Diagram**
+ **Connection Diagram**
 
 ![](media/86e444ee07fd33bfa2ca8d896e571117.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter"
 
@@ -344,38 +344,38 @@ LED gradually brightens then darkens.
 import RPi.GPIO as GPIO
 import time
 
-ledPin = 18  #define led pin
+ledPin = 18  ##define led pin
 
-GPIO.setmode(GPIO.BCM)  # use BCM numbers
-GPIO.setup(ledPin,GPIO.OUT) #set the ledPin OUTPUT mode
-GPIO.output(ledPin,GPIO.LOW)  # make ledPin output LOW level
-pwm = GPIO.PWM(18,100)  #create a PWM instance
-pwm.start(0)   #start PWM
+GPIO.setmode(GPIO.BCM)  ## use BCM numbers
+GPIO.setup(ledPin,GPIO.OUT) ##set the ledPin OUTPUT mode
+GPIO.output(ledPin,GPIO.LOW)  ## make ledPin output LOW level
+pwm = GPIO.PWM(18,100)  ##create a PWM instance
+pwm.start(0)   ##start PWM
 
-def brighten():  #define function
+def brighten():  ##define function
     for i in range(0,100,+1):
-        pwm.ChangeDutyCycle(i)  #change the frequency,To lighten gradually
+        pwm.ChangeDutyCycle(i)  ##change the frequency,To lighten gradually
         time.sleep(0.01)
         
 def darken(): 
     for i in range(100,0,-1):
-        pwm.ChangeDutyCycle(i) #To darken gradually
+        pwm.ChangeDutyCycle(i) ##To darken gradually
         time.sleep(0.01)
     
-while True:     #loop
-    brighten()  #call function
+while True:     ##loop
+    brighten()  ##call function
     darken()
 
-pwm.stop()  #stop PWM
+pwm.stop()  ##stop PWM
 
-GPIO.cleanup()    #release all GPIO
+GPIO.cleanup()    ##release all GPIO
 ```
 
 
 
-## Project 5：Traffic Lights
+### Project 5：Traffic Lights
 
-### Description：
+ Description：
 
 In this lesson, we will learn how to control multiple LED lights and simulate the operation of traffic lights.
 
@@ -389,7 +389,7 @@ Amber light (also known as 'orange light' or 'yellow light'):
 
 Warns that the signal is about to change to red, with some jurisdictions requiring drivers to stop if it is safe to do so, and others allowing drivers to go through the intersection if safe to do so.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -399,13 +399,13 @@ Warns that the signal is about to change to red, with some jurisdictions requiri
 | ![](media/c5aadd2106124e3a345af17ce33176ca.png)              | ![image-20230525133140409](media/image-20230525133140409.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              |
 | Breadboard*1                                                 | 220Ω Resistor*3                                              | Jumper Wires                                                 |
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/cfee321c7d9cb39f2327c2577b3332f9.png)
 
 ![](media/78414f7f1aa3081a54b9ea7e4e679b5f.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter"
 
@@ -425,13 +425,13 @@ Red light is on 5s and off, yellow light flashes 3s and turn off, green light is
 import RPi.GPIO as GPIO
 from time import sleep
 
-#LED pin
+##LED pin
 red = 18
 yellow = 23
 green = 24
 
-GPIO.setmode(GPIO.BCM)  # use BCM numbers
-GPIO.setup(red,GPIO.OUT)  #set the ledPin OUTPUT mode
+GPIO.setmode(GPIO.BCM)  ## use BCM numbers
+GPIO.setup(red,GPIO.OUT)  ##set the ledPin OUTPUT mode
 GPIO.setup(yellow,GPIO.OUT)
 GPIO.setup(green,GPIO.OUT)
 
@@ -444,9 +444,9 @@ while True:
     sleep(5)
     GPIO.output(red,GPIO.LOW)
     
-    GPIO.output(yellow,GPIO.HIGH) #turn on yellow_led
+    GPIO.output(yellow,GPIO.HIGH) ##turn on yellow_led
     sleep(0.5)
-    GPIO.output(yellow,GPIO.LOW) #turn off yellow_led
+    GPIO.output(yellow,GPIO.LOW) ##turn off yellow_led
     sleep(0.5)
     GPIO.output(yellow,GPIO.HIGH)
     sleep(0.5)
@@ -457,23 +457,23 @@ while True:
     GPIO.output(yellow,GPIO.LOW) 
     sleep(0.5)
     
-    GPIO.output(green,GPIO.HIGH)  #turn on green_led
-    sleep(5)     #delay 5s
-    GPIO.output(green,GPIO.LOW)   #turn off green_led
+    GPIO.output(green,GPIO.HIGH)  ##turn on green_led
+    sleep(5)     ##delay 5s
+    GPIO.output(green,GPIO.LOW)   ##turn off green_led
     
     
-GPIO.cleanup()   #release all GPIO
+GPIO.cleanup()   ##release all GPIO
 ```
 
 
 
-## Project 6：RGB Light
+### Project 6：RGB Light
 
-### Description：
+ Description：
 
 In this chapter, we will demonstrate how RGB lights show different colors via programming.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) | ![](media/c5aadd2106124e3a345af17ce33176ca.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------- |
@@ -481,7 +481,7 @@ In this chapter, we will demonstrate how RGB lights show different colors via pr
 | ![889d6bdff2f677c7a8c8b6d311c0531c](media/889d6bdff2f677c7a8c8b6d311c0531c.png) | ![b46a1a082eb9904aa7cb060eaac8056d](media/b46a1a082eb9904aa7cb060eaac8056d.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              |                                                 |
 | RGB - LED *1                                                 | 100Ω Resistor*3                                              | Jumper Wires                                                 |                                                 |
 
-### Component Knowledge：
+ Component Knowledge：
 
 We use common cathode RGB lights.
 
@@ -497,13 +497,13 @@ Red, green and blue are three primary colors. They could produce all kinds of vi
 
 Next, we will make a RGB LED displaying all kinds of colors.
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/04d2937217700e739cd0c1febdd42351.png)
 
 ![](media/c342422f2ba2b27f6158e6163a3ccdaf.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter"
 
@@ -524,62 +524,62 @@ import RPi.GPIO as GPIO
 from time import sleep
 import random
 
-#define RGB pin
+##define RGB pin
 pin_R = 24
 pin_G = 23
 pin_B = 18
-GPIO.setmode(GPIO.BCM)  # use BCM numbers
-#set the RGB Pin OUTPUT mode
+GPIO.setmode(GPIO.BCM)  ## use BCM numbers
+##set the RGB Pin OUTPUT mode
 GPIO.setup(pin_R,GPIO.OUT)
 GPIO.setup(pin_G,GPIO.OUT)
 GPIO.setup(pin_B,GPIO.OUT)
 
-# makeRGB Pin output LOW level
+## makeRGB Pin output LOW level
 GPIO.output(pin_R,GPIO.HIGH)
 GPIO.output(pin_G,GPIO.HIGH)
 GPIO.output(pin_B,GPIO.HIGH)
 
-#set pwm frequence to 1000hz
+##set pwm frequence to 1000hz
 pwm_R = GPIO.PWM(pin_R,100)
 pwm_G = GPIO.PWM(pin_G,100)
 pwm_B = GPIO.PWM(pin_B,100)
-#set inital duty cycle to 0
+##set inital duty cycle to 0
 pwm_R.start(0)
 pwm_G.start(0)
 pwm_B.start(0)
 
-#function. receive the value to display different colors
+##function. receive the value to display different colors
 def setColor(val_R,val_G,val_B):
     pwm_R.ChangeDutyCycle(val_R)
     pwm_G.ChangeDutyCycle(val_G)
     pwm_B.ChangeDutyCycle(val_B)
 
 while True:
-    # get a random in 0~100
+    ## get a random in 0~100
     R = random.randint(0,100)
     G = random.randint(0,100)
     B = random.randint(0,100)
-    setColor(R,G,B)  #set the color value
+    setColor(R,G,B)  ##set the color value
     print('Red=%d, Green = %d, Blue = %d' %(R, G, B))
     sleep(0.2)
     
-#stop pwm
+##stop pwm
 pwm_R.stop()
 pwm_G.stop()
 pwm_B.stop()
 
-GPIO.cleanup()  #release all GPIO
+GPIO.cleanup()  ##release all GPIO
 ```
 
 
 
-## Project 7：Flow Light
+### Project 7：Flow Light
 
-### Description：
+ Description：
 
 What is flow light? Maybe you see it on the wall of buildings and billboards. It is a scene that LED gradually brightens then darkens one by one.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) | ![](media/c5aadd2106124e3a345af17ce33176ca.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------- |
@@ -587,12 +587,12 @@ What is flow light? Maybe you see it on the wall of buildings and billboards. It
 | ![](media/cd25a4727c48f7d48aa0160cc54ecafb.png)              | ![b46a1a082eb9904aa7cb060eaac8056d](media/b46a1a082eb9904aa7cb060eaac8056d.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              |                                                 |
 | LED - Red *8                                                 | 220Ω Resistor*8                                              | Jumper Wires                                                 |                                                 |
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/ce96ac0e062033019ef22efed248d112.png)
 ![](media/510afde336376c085736faf14e74a83a.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter"
 
@@ -612,7 +612,7 @@ Eight LED lights change from light to dark then back to dark, one by one.
 import RPi.GPIO as GPIO
 from time import sleep
 
-#LED pin
+##LED pin
 led1 = 18
 led2 = 23
 led3 = 24
@@ -623,8 +623,8 @@ led7 = 20
 led8 = 21
 
 
-GPIO.setmode(GPIO.BCM) # use BCM numbers
-#set the ledPin OUTPUT mode
+GPIO.setmode(GPIO.BCM) ## use BCM numbers
+##set the ledPin OUTPUT mode
 GPIO.setup(led1,GPIO.OUT)
 GPIO.setup(led2,GPIO.OUT)
 GPIO.setup(led3,GPIO.OUT)
@@ -635,9 +635,9 @@ GPIO.setup(led7,GPIO.OUT)
 GPIO.setup(led8,GPIO.OUT)
 
 while True:
-    #Led lights are lit one by one
+    ##Led lights are lit one by one
     GPIO.output(led1,GPIO.HIGH)
-    sleep(0.2)   # the delay size to control the speed of the water lamp 
+    sleep(0.2)   ## the delay size to control the speed of the water lamp 
     GPIO.output(led2,GPIO.HIGH)
     sleep(0.2)
     GPIO.output(led3,GPIO.HIGH)
@@ -653,7 +653,7 @@ while True:
     GPIO.output(led8,GPIO.HIGH)
     sleep(0.2)
     
-    #Led lights go out one by one
+    ##Led lights go out one by one
     GPIO.output(led8,GPIO.LOW)
     sleep(0.2)
     GPIO.output(led7,GPIO.LOW)
@@ -671,18 +671,18 @@ while True:
     GPIO.output(led1,GPIO.LOW)
     sleep(0.2)
 
-GPIO.cleanup()  #release all GPIO
+GPIO.cleanup()  ##release all GPIO
 ```
 
 
 
-## Project 8：Doorbell
+### Project 8：Doorbell
 
-### Description：
+ Description：
 
 In this project, we will demonstrate how doorbell works.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) | ![](media/c5aadd2106124e3a345af17ce33176ca.png)              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -690,7 +690,7 @@ In this project, we will demonstrate how doorbell works.
 | ![f05a177b0d2d9c0effccf535151bbfdb](media/f05a177b0d2d9c0effccf535151bbfdb.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              | ![b46a1a082eb9904aa7cb060eaac8056d](media/b46a1a082eb9904aa7cb060eaac8056d.png) | ![image-20230525140616080](media/image-20230525140616080.png) |
 | Active Buzzer *1                                             | Jumper Wires                                                 | 10KΩ Resistor*1                                              | Button Switch *1                                             |
 
-### **Components Knowledge:**
+ **Components Knowledge:**
 
 **Active buzzer：**
 
@@ -716,13 +716,13 @@ Resistor could stabilize the electronic signal and protect circuit.
 
 The circuit will be shorten and components will be burnt if without wiring 10kΩ resistor. 
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/c32ca6a87be4a8615bd30fb54892f3d5.png)
 
 ![](media/b45c9fa077f46f2c55b662a37ac2adca.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter".
 
@@ -742,35 +742,35 @@ Press button, the buzzer emits sound, otherwise, it doesn’t.
 import RPi.GPIO as GPIO
 from time import sleep
 
-#active buzzer pin
+##active buzzer pin
 buzPin = 27
-#button pin
+##button pin
 btnPin = 18
 
-GPIO.setmode(GPIO.BCM) # use BCM numbers
-GPIO.setup(buzPin,GPIO.OUT)  #set buzPin OUTPUT mode
-GPIO.setup(btnPin,GPIO.IN,GPIO.PUD_UP)  # set btnPin INPUT mode
+GPIO.setmode(GPIO.BCM) ## use BCM numbers
+GPIO.setup(buzPin,GPIO.OUT)  ##set buzPin OUTPUT mode
+GPIO.setup(btnPin,GPIO.IN,GPIO.PUD_UP)  ## set btnPin INPUT mode
 
 while True:
     val = GPIO.input(btnPin)
     print(val);
-    if(val == 0):  #Judge whether the button is pressed
-        GPIO.output(buzPin,GPIO.HIGH)  #Buzzer ring
+    if(val == 0):  ##Judge whether the button is pressed
+        GPIO.output(buzPin,GPIO.HIGH)  ##Buzzer ring
     else:
-        GPIO.output(buzPin,GPIO.LOW)   #buzzer off
+        GPIO.output(buzPin,GPIO.LOW)   ##buzzer off
         
-GPIO.cleanup() # Release all GPIO
+GPIO.cleanup() ## Release all GPIO
 ```
 
 
 
-## Project 9：Passive Buzzer
+### Project 9：Passive Buzzer
 
-### Description：
+ Description：
 
 We will conduct an interesting experiment-----control passive buzzer to compose a song.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -778,7 +778,7 @@ We will conduct an interesting experiment-----control passive buzzer to compose 
 | ![](media/c5aadd2106124e3a345af17ce33176ca.png)              | ![d1ea1bb2b2749820cab389d5b85b838b](media/d1ea1bb2b2749820cab389d5b85b838b.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              |
 | Breadboard*1                                                 | Passive Buzzer *1                                            | Jumper Wires                                                 |
 
-### Component Knowledge
+ Component Knowledge
 
 **Passive buzzer**：
 
@@ -798,13 +798,13 @@ Passive buzzer provides alternating current to sound coils to make electronic ma
 
 Only certain frequency with high and low levels can make passive buzzer emit sound, since DC current only makes vibration film vibrated continuously rather than producing sound.
 
-### Schematic and Connection Diagram
+ Schematic and Connection Diagram
 
 ![](media/fa845f49ab735773573c648b3ad9eaac.png)
 
 ![](media/4bcd2163458dbec4afb3f0ca73c40a97.png)
 
-### Run Example Code 1：
+ Run Example Code 1：
 
 Input the following commands and press "Enter"
 
@@ -821,8 +821,8 @@ Note: Press Ctrl + C on keyboard and exit code running.
 **Example Code 1：**
 
 ```python
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+##!/usr/bin/env python
+## -*- coding: utf-8 -*-
 
 import time
 import RPi.GPIO as GPIO
@@ -834,17 +834,17 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(buzPin, GPIO.OUT)
 
 try:
-    while 1:  #loop
+    while 1:  ##loop
         while(i1<50):
             GPIO.output(buzPin,GPIO.HIGH)
-            time.sleep(0.001)              #wait for 1 ms
+            time.sleep(0.001)              ##wait for 1 ms
             GPIO.output(buzPin,GPIO.LOW)
             time.sleep(0.001)
             i1 = i1 + 1
         time.sleep(0.3)
         while(i2<50):
             GPIO.output(buzPin,GPIO.HIGH)
-            time.sleep(0.001)              #wait for 1 ms
+            time.sleep(0.001)              ##wait for 1 ms
             GPIO.output(buzPin,GPIO.LOW)
             time.sleep(0.001)
             i2 = i2 + 1
@@ -853,11 +853,11 @@ try:
         i2 = 0
 except KeyboardInterrupt:
     pass
-p.stop()  #stop pwm
-GPIO.cleanup() #release all GPIO
+p.stop()  ##stop pwm
+GPIO.cleanup() ##release all GPIO
 ```
 
-### Run Example Code 2：
+ Run Example Code 2：
 
 Input the following commands and press "Enter"
 
@@ -874,13 +874,13 @@ Note: Press Ctrl + C on keyboard and exit code running.
 **Example Code 2：**
 
 ```python
-# -*- coding: utf-8 -*-
+## -*- coding: utf-8 -*-
 import RPi.GPIO as GPIO
 import time
 
-Buzzer = 18  # set the Pin
+Buzzer = 18  ## set the Pin
 
-# Happy birthday
+## Happy birthday
 Do = 262  
 Re = 294  
 Mi = 330  
@@ -896,14 +896,14 @@ Sol_h = 784
 La_h = 880  
 Si_h = 988
 
-# The tune
+## The tune
 song_1 = [ 
     Sol,Sol,La,Sol,Do_h,Si,
     Sol,Sol,La,Sol,Re_h,Do_h,
     Sol,Sol,Sol_h,Mi_h,Do_h,Si,La,
     Fa_h,Fa_h,Mi_h,Do_h,Re_h,Do_h
 ]
-# delay
+## delay
 beat_1 = [
     0.5,0.5,1,1,1,1+1,
     0.5,0.5,1,1,1,1+1,
@@ -913,39 +913,39 @@ beat_1 = [
 
 
 def setup():
-    GPIO.setmode(GPIO.BCM)       # Numbers GPIOs by physical location
-    GPIO.setup(Buzzer, GPIO.OUT)    # Set pins' mode is output
-    global Buzz                     # Assign a global variable to replace GPIO.PWM 
-    Buzz = GPIO.PWM(Buzzer, 440)    # 440 is initial frequency.
-    Buzz.start(50)                  # Start Buzzer pin with 50% duty ration
+    GPIO.setmode(GPIO.BCM)       ## Numbers GPIOs by physical location
+    GPIO.setup(Buzzer, GPIO.OUT)    ## Set pins' mode is output
+    global Buzz                     ## Assign a global variable to replace GPIO.PWM 
+    Buzz = GPIO.PWM(Buzzer, 440)    ## 440 is initial frequency.
+    Buzz.start(50)                  ## Start Buzzer pin with 50% duty ration
 
 def loop():
     while True:
         print('\n    Playing song 3...')
-        for i in range(0, len(song_1)):     # Play song 1
-            Buzz.ChangeFrequency(song_1[i]) # Change the frequency along the song note
-            time.sleep(beat_1[i] * 0.5)     # delay a note for beat * 0.5s
+        for i in range(0, len(song_1)):     ## Play song 1
+            Buzz.ChangeFrequency(song_1[i]) ## Change the frequency along the song note
+            time.sleep(beat_1[i] * 0.5)     ## delay a note for beat * 0.5s
 
 def destory():
-    Buzz.stop()                 # Stop the buzzer
-    GPIO.output(Buzzer, 1)      # Set Buzzer pin to High
-    GPIO.cleanup()              # Release resource
+    Buzz.stop()                 ## Stop the buzzer
+    GPIO.output(Buzzer, 1)      ## Set Buzzer pin to High
+    GPIO.cleanup()              ## Release resource
 
-if __name__ == '__main__':      # Program start from here
+if __name__ == '__main__':      ## Program start from here
     setup()
     try:
         loop()
-    except KeyboardInterrupt:   # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
+    except KeyboardInterrupt:   ## When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
         destory()
 ```
 
-## Project 10：1-Digit 7 Segment LED Display
+### Project 10：1-Digit 7 Segment LED Display
 
-### Description：
+ Description：
 
 To make LED display numbers, human being invented digital display, in this lesson, we will learn how to control digital display.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) | ![](media/c5aadd2106124e3a345af17ce33176ca.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------- |
@@ -953,7 +953,7 @@ To make LED display numbers, human being invented digital display, in this lesso
 | ![44f6ed69f58b019b0ba472702daafa1f](media/44f6ed69f58b019b0ba472702daafa1f.png) | ![b46a1a082eb9904aa7cb060eaac8056d](media/b46a1a082eb9904aa7cb060eaac8056d.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              |                                                 |
 | 1-digit 7-seg LED*1                                          | 220ΩResistor*8                                               | Jumper Wires                                                 |                                                 |
 
-### Component Knowledge：
+ Component Knowledge：
 
 **LED display：**
 
@@ -973,13 +973,13 @@ Each of the LEDs in the display is given a positional segment with one of its co
 
 ![](media/92ec4bc2d10f37ebf330be7fd8a5039a.png)
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/39b141d4edac1d530838bc7866b18272.png)
 
 ![](media/158db67c75e043234a73bad906dfdb87.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter"
 
@@ -999,7 +999,7 @@ Note: Press Ctrl + C on keyboard and exit code running
 import RPi.GPIO as GPIO
 from time import sleep
 
-# led pin
+## led pin
 a = 23
 b = 18
 c = 6
@@ -1009,8 +1009,8 @@ f = 24
 g = 25
 dp = 5
 
-GPIO.setmode(GPIO.BCM)  #use BCM numbers
-#set the Pin OUTPUT mode
+GPIO.setmode(GPIO.BCM)  ##use BCM numbers
+##set the Pin OUTPUT mode
 GPIO.setup(a,GPIO.OUT)  
 GPIO.setup(b,GPIO.OUT)  
 GPIO.setup(c,GPIO.OUT)  
@@ -1020,7 +1020,7 @@ GPIO.setup(f,GPIO.OUT)
 GPIO.setup(g,GPIO.OUT)  
 GPIO.setup(dp,GPIO.OUT)  
 
-# display 0
+## display 0
 def d_0():
     GPIO.output(a,GPIO.HIGH)
     GPIO.output(b,GPIO.HIGH)
@@ -1030,7 +1030,7 @@ def d_0():
     GPIO.output(f,GPIO.HIGH)
     GPIO.output(g,GPIO.LOW)
     GPIO.output(dp,GPIO.LOW)
-def d_1():  # display 1
+def d_1():  ## display 1
     GPIO.output(a,GPIO.LOW)
     GPIO.output(b,GPIO.HIGH)
     GPIO.output(c,GPIO.HIGH)
@@ -1039,7 +1039,7 @@ def d_1():  # display 1
     GPIO.output(f,GPIO.LOW)
     GPIO.output(g,GPIO.LOW)
     GPIO.output(dp,GPIO.LOW)
-def d_2():  # display 2
+def d_2():  ## display 2
     GPIO.output(a,GPIO.HIGH)
     GPIO.output(b,GPIO.HIGH)
     GPIO.output(c,GPIO.LOW)
@@ -1048,7 +1048,7 @@ def d_2():  # display 2
     GPIO.output(f,GPIO.LOW)
     GPIO.output(g,GPIO.HIGH)
     GPIO.output(dp,GPIO.LOW)
-def d_3():  # display 4
+def d_3():  ## display 4
     GPIO.output(a,GPIO.HIGH)
     GPIO.output(b,GPIO.HIGH)
     GPIO.output(c,GPIO.HIGH)
@@ -1114,8 +1114,8 @@ def d_9():
 
 print("test...")
 while True:
-    d_0()  #Call function showing 0
-    sleep(1) #delay 1s
+    d_0()  ##Call function showing 0
+    sleep(1) ##delay 1s
     d_1()
     sleep(1)
     d_2()
@@ -1135,16 +1135,16 @@ while True:
     d_9()
     sleep(1)
 
-GPIO.cleanup()  #realese all GPIO
+GPIO.cleanup()  ##realese all GPIO
 ```
 
-## Project 11：4-Digit Segment LED Display
+### Project 11：4-Digit Segment LED Display
 
-### Description：
+ Description：
 
 In previous lesson, the LED display only shows 1 digit number, whereas, we could try to operate 4-digit segment LED display.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) | ![](media/c5aadd2106124e3a345af17ce33176ca.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------- |
@@ -1152,7 +1152,7 @@ In previous lesson, the LED display only shows 1 digit number, whereas, we could
 | ![020f9ab9146b913e8cc865b626c057b1](media/020f9ab9146b913e8cc865b626c057b1.png) | ![b46a1a082eb9904aa7cb060eaac8056d](media/b46a1a082eb9904aa7cb060eaac8056d.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              |                                                 |
 | 4-digit 7-seg LED*1                                          | 220Ω Resistor*8                                              | Jumper Wires                                                 |                                                 |
 
-### Component Knowledge
+ Component Knowledge
 
 **digit LED display:**
 
@@ -1164,7 +1164,7 @@ Ours is common cathode.
 
 ![](media/fca69e08fa315b81ccb1c6105f8fd28c.png)
 
-### **Schematic Diagram**
+ **Schematic Diagram**
 
 ![](media/image-20231008153507697.png)
 
@@ -1174,7 +1174,7 @@ Ours is common cathode.
 
 ![](media/15c8eee5e555dfc413f34b7ecf16fab2.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter"
 
@@ -1191,14 +1191,14 @@ Note: Press Ctrl + C on keyboard and exit code running.
 **Example Code：**
 
 ```python
-# -*- coding:utf-8 -*-
+## -*- coding:utf-8 -*-
 import RPi.GPIO as GPIO
 from time import sleep
-from threading import Timer  #Library files for introducing timers
+from threading import Timer  ##Library files for introducing timers
  
 d_num = 0
 b_num = 0
-#Pin of each section of nixie tube
+##Pin of each section of nixie tube
 a = 24
 b = 18
 c = 6
@@ -1207,7 +1207,7 @@ e = 26
 f = 23
 g = 5
 dp = 13
-#Pin of each digit of nixie tube
+##Pin of each digit of nixie tube
 d1 = 4
 d2 = 17
 d3 = 27
@@ -1215,7 +1215,7 @@ d4 = 22
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-#set as output
+##set as output
 GPIO.setup(a,GPIO.OUT)  
 GPIO.setup(b,GPIO.OUT)  
 GPIO.setup(c,GPIO.OUT)  
@@ -1224,19 +1224,19 @@ GPIO.setup(e,GPIO.OUT)
 GPIO.setup(f,GPIO.OUT)  
 GPIO.setup(g,GPIO.OUT)  
 GPIO.setup(dp,GPIO.OUT)  
-#set as output
+##set as output
 GPIO.setup(d1,GPIO.OUT)  
 GPIO.setup(d2,GPIO.OUT)  
 GPIO.setup(d3,GPIO.OUT)  
 GPIO.setup(d4,GPIO.OUT)  
 
-#Set to high level, turn off the nixie tube
+##Set to high level, turn off the nixie tube
 GPIO.output(d1,GPIO.HIGH)
 GPIO.output(d2,GPIO.HIGH)
 GPIO.output(d3,GPIO.HIGH)
 GPIO.output(d4,GPIO.HIGH)
 
-def d_0():  #display 0
+def d_0():  ##display 0
     GPIO.output(a,GPIO.HIGH)
     GPIO.output(b,GPIO.HIGH)
     GPIO.output(c,GPIO.HIGH)
@@ -1245,7 +1245,7 @@ def d_0():  #display 0
     GPIO.output(f,GPIO.HIGH)
     GPIO.output(g,GPIO.LOW)
     GPIO.output(dp,GPIO.LOW)
-def d_1(): #display 1
+def d_1(): ##display 1
     GPIO.output(a,GPIO.LOW)
     GPIO.output(b,GPIO.HIGH)
     GPIO.output(c,GPIO.HIGH)
@@ -1254,7 +1254,7 @@ def d_1(): #display 1
     GPIO.output(f,GPIO.LOW)
     GPIO.output(g,GPIO.LOW)
     GPIO.output(dp,GPIO.LOW)
-def d_2(): #display 2
+def d_2(): ##display 2
     GPIO.output(a,GPIO.HIGH)
     GPIO.output(b,GPIO.HIGH)
     GPIO.output(c,GPIO.LOW)
@@ -1327,33 +1327,33 @@ def d_9():
     GPIO.output(g,GPIO.HIGH)
     GPIO.output(dp,GPIO.LOW)
 
-def b_show(bit):   #Choose which digital tube to turn on
-    #Choose to activate the single-digit digital tube, 
-    #which is the right-most digit of the 4-digit digital tube
+def b_show(bit):   ##Choose which digital tube to turn on
+    ##Choose to activate the single-digit digital tube, 
+    ##which is the right-most digit of the 4-digit digital tube
     if(bit == 0):
         GPIO.output(d1,GPIO.LOW)
         GPIO.output(d2,GPIO.HIGH)
         GPIO.output(d3,GPIO.HIGH)
         GPIO.output(d4,GPIO.HIGH)
-    if(bit == 1):   #Select the start digit digital tube
+    if(bit == 1):   ##Select the start digit digital tube
         GPIO.output(d1,GPIO.HIGH)
         GPIO.output(d2,GPIO.LOW)
         GPIO.output(d3,GPIO.HIGH)
         GPIO.output(d4,GPIO.HIGH)
-    if(bit == 2):   #Select the digital tube that activates the hundreds digit number
+    if(bit == 2):   ##Select the digital tube that activates the hundreds digit number
         GPIO.output(d1,GPIO.HIGH)
         GPIO.output(d2,GPIO.HIGH)
         GPIO.output(d3,GPIO.LOW)
         GPIO.output(d4,GPIO.HIGH)
-    if(bit == 3):   #Select the digital tube to activate thousands of digits
+    if(bit == 3):   ##Select the digital tube to activate thousands of digits
         GPIO.output(d1,GPIO.HIGH)
         GPIO.output(d2,GPIO.HIGH)
         GPIO.output(d3,GPIO.HIGH)
         GPIO.output(d4,GPIO.LOW)
 
 def recongnition(num):
-    if(num == 0):  #num = 0
-        d_0()      #Call d_0() to display 0 on the digital tube
+    if(num == 0):  ##num = 0
+        d_0()      ##Call d_0() to display 0 on the digital tube
     if(num == 1):
         d_1()
     if(num == 2):
@@ -1375,45 +1375,45 @@ def recongnition(num):
         
 def display():
     global b_num
-    if(b_num == 0):  #The ones place, the one on the far right of the 4-digit digital tube
-        ge = d_num%10 # So % is the cooperations, so for example, 1356%10 = 6, so you get the units digit of 1356
-        recongnition(ge) #This function, called recongnition(), is the number displayed around the digital tube, at d_num=1356, which is 6
-        b_show(0)  #Call the function b_show(), which controls the nibbit, so that the units digit is the rightmost digit that can be lit
-    if(b_num == 1):  #ten
-        shi = d_num%100 #I'm going to subtract the hundreds place，1356 % 100 = 56
-        shi = shi/10  # 56 / 10 = 5 ，You get ten digits
+    if(b_num == 0):  ##The ones place, the one on the far right of the 4-digit digital tube
+        ge = d_num%10 ## So % is the cooperations, so for example, 1356%10 = 6, so you get the units digit of 1356
+        recongnition(ge) ##This function, called recongnition(), is the number displayed around the digital tube, at d_num=1356, which is 6
+        b_show(0)  ##Call the function b_show(), which controls the nibbit, so that the units digit is the rightmost digit that can be lit
+    if(b_num == 1):  ##ten
+        shi = d_num%100 ##I'm going to subtract the hundreds place，1356 % 100 = 56
+        shi = shi/10  ## 56 / 10 = 5 ，You get ten digits
         recongnition(shi)
-        b_show(1)  #Enable the ten digit digital tube to be lit
-    if(b_num == 2): #A one hundred - bit
-        bai = d_num%1000  #Let's leave out the thousands first, for example：1356 % 1000 = 356 ，So we get rid of the 1
-        bai = bai/100     #Then,356 / 100 = 3，The integers are equal to 3, so you get the hundreds
+        b_show(1)  ##Enable the ten digit digital tube to be lit
+    if(b_num == 2): ##A one hundred - bit
+        bai = d_num%1000  ##Let's leave out the thousands first, for example：1356 % 1000 = 356 ，So we get rid of the 1
+        bai = bai/100     ##Then,356 / 100 = 3，The integers are equal to 3, so you get the hundreds
         recongnition(bai)
-        b_show(2)  #So that the hundreds digit digital tube can be lit
-    if(b_num == 3): #A one thousand - bit
-        qian = d_num/1000 # 1356 / 1000 = 1 ，We get thousands
+        b_show(2)  ##So that the hundreds digit digital tube can be lit
+    if(b_num == 3): ##A one thousand - bit
+        qian = d_num/1000 ## 1356 / 1000 = 1 ，We get thousands
         recongnition(qian)
-        b_show(3)  #So that the digital tube in the thousands can be lit
-    b_num = b_num + 1  #b_num add 1，In order to show you all the numbers
-    if(b_num >3): #Since the digital tube is four bits, the limit cannot be greater than three
-        b_num = 0 #Greater than 3 is equal to 0
-    t = Timer(timer_interval,display) #
+        b_show(3)  ##So that the digital tube in the thousands can be lit
+    b_num = b_num + 1  ##b_num add 1，In order to show you all the numbers
+    if(b_num >3): ##Since the digital tube is four bits, the limit cannot be greater than three
+        b_num = 0 ##Greater than 3 is equal to 0
+    t = Timer(timer_interval,display) ##
     t.start()
 
-timer_interval = 0.005   #Start the timer interrupt every 0.005 seconds
-t = Timer(timer_interval,display)  #Timer() is the Timer function, which means display is executed every 0.005s
-t.start() #On timer
+timer_interval = 0.005   ##Start the timer interrupt every 0.005 seconds
+t = Timer(timer_interval,display)  ##Timer() is the Timer function, which means display is executed every 0.005s
+t.start() ##On timer
 
 print("test...")
 while True:
-    for num in range(0,10000):  #display 0~10000
-        d_num = num  #num = d_num
-        print(d_num) #Terminal print out : d_num
-        sleep(1)  #delay 1s
+    for num in range(0,10000):  ##display 0~10000
+        d_num = num  ##num = d_num
+        print(d_num) ##Terminal print out : d_num
+        sleep(1)  ##delay 1s
 
-GPIO.cleanup() #release all GPIO
+GPIO.cleanup() ##release all GPIO
 ```
 
-### Explanation：
+ Explanation：
 
 **from threading import Timer**
 
@@ -1429,13 +1429,13 @@ This is a timer“t”，timer_interval is the time interval of triggering timer
 
 [https://docs.python.org/3/library/threading.html](https://docs.python.org/3/library/threading.html)
 
-## Project 12：8\*8 Dot Matrix
+### Project 12：8\*8 Dot Matrix
 
-### Description：
+ Description：
 
 In this chapter, let’s get down with a 8x8 LED dot matrix
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) | ![](media/c5aadd2106124e3a345af17ce33176ca.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------- |
@@ -1443,7 +1443,7 @@ In this chapter, let’s get down with a 8x8 LED dot matrix
 | ![a0ede53942fca2727aed9a9930129780](media/a0ede53942fca2727aed9a9930129780.png) | ![b46a1a082eb9904aa7cb060eaac8056d](media/b46a1a082eb9904aa7cb060eaac8056d.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              |                                                 |
 | 8\*8 LED Matrix*1                                            | 220Ω Resistor*8                                              | Jumper Wires                                                 |                                                 |
 
-### Component Knowledge
+ Component Knowledge
 
 **8\*8 LED Matrix：**
 
@@ -1455,19 +1455,19 @@ Generally, there are two types of dot matrix – common cathode and common anode
 
 ![](media/bcfa2498367eaf9c7733da15af32eae7.png)
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/f4db95b367ac12e35c2f8ccd8ce28070.png)
 
 ![](media/4ede649bb46acce5d88013522065aa70.png)
 
-### Working Principle：
+ Working Principle：
 
 8\*8 is composed of LEDs. It will turn on if the positive is high level and negative is low level.
 
 For the above figure, the first LED will be on if setting Y0(0) to HIGH and the rest of pins to LOW, X0(A) to LOW and the rest one to HIGH.
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter"
 
@@ -1484,14 +1484,14 @@ Note: Press Ctrl + C on keyboard and exit code running.
 **Example Code：**
 
 ```python
-# -*- coding:utf-8 -*-
+## -*- coding:utf-8 -*-
 import RPi.GPIO as GPIO
 from time import sleep
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
-#Define the pin of the row
+##Define the pin of the row
 row1 = 27
 row2 = 4
 row3 = 5
@@ -1500,7 +1500,7 @@ row5 = 26
 row6 = 6
 row7 = 19
 row8 = 13
-#Define the pins of the column
+##Define the pins of the column
 col1 = 24
 col2 = 16
 col3 = 20
@@ -1510,7 +1510,7 @@ col6 = 23
 col7 = 25
 col8 = 12
 
-#Set to output
+##Set to output
 GPIO.setup(row1,GPIO.OUT)
 GPIO.setup(row2,GPIO.OUT)
 GPIO.setup(row3,GPIO.OUT)
@@ -1529,7 +1529,7 @@ GPIO.setup(col6,GPIO.OUT)
 GPIO.setup(col7,GPIO.OUT)
 GPIO.setup(col8,GPIO.OUT)
 
-#Sets the pin of the column to low level
+##Sets the pin of the column to low level
 GPIO.output(col1,GPIO.LOW)
 GPIO.output(col2,GPIO.LOW)
 GPIO.output(col3,GPIO.LOW)
@@ -1539,13 +1539,13 @@ GPIO.output(col6,GPIO.LOW)
 GPIO.output(col7,GPIO.LOW)
 GPIO.output(col8,GPIO.LOW)
 
-#Since the column of the lattice has been set to low level, 
-#the corresponding row of the lattice will light up when the pin of the row is at high level
+##Since the column of the lattice has been set to low level, 
+##the corresponding row of the lattice will light up when the pin of the row is at high level
 def Row(d):
     if(d ==1):
-        GPIO.output(row1,GPIO.HIGH)  #Light the first line
+        GPIO.output(row1,GPIO.HIGH)  ##Light the first line
     if(d ==2):
-        GPIO.output(row2,GPIO.HIGH)  #Light the second line
+        GPIO.output(row2,GPIO.HIGH)  ##Light the second line
     if(d ==3):
         GPIO.output(row3,GPIO.HIGH)
     if(d ==4):
@@ -1559,7 +1559,7 @@ def Row(d):
     if(d ==8):
         GPIO.output(row8,GPIO.HIGH)
     
-#Close the lattice
+##Close the lattice
 def off(): 
     GPIO.output(row1,GPIO.LOW)
     GPIO.output(row2,GPIO.LOW)
@@ -1572,23 +1572,23 @@ def off():
 
 print("test...")
 while True:
-    for num in range(1,10):  #Light the lattice line by line
+    for num in range(1,10):  ##Light the lattice line by line
         Row(num)
-        if(num == 9):  #Because the lattice has only 8 rows, and I'm limiting it here, is equal to 9
-            off()      #Close the lattice
+        if(num == 9):  ##Because the lattice has only 8 rows, and I'm limiting it here, is equal to 9
+            off()      ##Close the lattice
         sleep(0.2)
 
-GPIO.cleanup()  #Release all GPIO ports
+GPIO.cleanup()  ##Release all GPIO ports
 ```
 
-## Project 13：74HC595
+### Project 13：74HC595
 
-### Description：
+ Description：
 
 In previous lesson, we control a 1-digit LED display with eight, which is wasteful. We need to figure out a method to save the use of GPIO ports. In fact,
 we need a 74HC595 CHIP.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) | ![](media/c5aadd2106124e3a345af17ce33176ca.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------- |
@@ -1596,7 +1596,7 @@ we need a 74HC595 CHIP.
 | ![44f6ed69f58b019b0ba472702daafa1f](media/44f6ed69f58b019b0ba472702daafa1f.png) | ![b46a1a082eb9904aa7cb060eaac8056d](media/b46a1a082eb9904aa7cb060eaac8056d.png) | ![4c653a3dd887b27f8cef84b7a16ad35c](media/4c653a3dd887b27f8cef84b7a16ad35c.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png) |
 | 1-digit 7- seg LED*1                                         | 220Ω Resistor*8                                              | 74HC595N*1                                                   | Jumper Wires                                    |
 
-### Component Knowledge
+ Component Knowledge
 
 **74HC595**：
 
@@ -1617,7 +1617,7 @@ The 74HC595 consists of an 8−bit shift register and an 8−bit D−typelatch w
 
 More details about 74HC595 chip, you could look through chip specification folder.
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/217d295bf815c6bfaba5c8085f308068.png)
 
@@ -1642,7 +1642,7 @@ Why? Since the binary is counted from the right, programming will be convenient.
 |  **8**  |  1   |  1   |  1   |  1   |  1   |  1   |  1   |  0   | **254** |
 |  **9**  |  1   |  1   |  1   |  1   |  0   |  1   |  1   |  0   | **246** |
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter"
 
@@ -1662,22 +1662,22 @@ Note: Press Ctrl + C on keyboard and exit code running
 import RPi.GPIO as GPIO
 from time import sleep
 
-#define 74Hc595 pin
-data = 17  #Serial digital input pin
+##define 74Hc595 pin
+data = 17  ##Serial digital input pin
 rck = 27
 sck = 22
 
-#These hexadecimal numbers show data from 0 to 9
-#Hexadecimal to binary,0x3F, 0011 1111
+##These hexadecimal numbers show data from 0 to 9
+##Hexadecimal to binary,0x3F, 0011 1111
 num = [0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, \
        0x7D, 0x07, 0x7F, 0x6F]
 
-GPIO.setmode(GPIO.BCM)   #use BCM numbers
-#set the 74HC595 Pin OUTPUT mode
+GPIO.setmode(GPIO.BCM)   ##use BCM numbers
+##set the 74HC595 Pin OUTPUT mode
 GPIO.setup(data,GPIO.OUT)  
 GPIO.setup(rck,GPIO.OUT)  
 GPIO.setup(sck,GPIO.OUT)
-#Set rck and sck to high first
+##Set rck and sck to high first
 GPIO.output(rck,GPIO.HIGH)
 GPIO.output(sck,GPIO.HIGH)
 
@@ -1703,37 +1703,37 @@ def bitshift(dat):
     if dat == 9:
         da = num[9]
     for a in range(0,8):
-        GPIO.output(sck,GPIO.LOW)  #set sckPin LOW 
-        if (da & 0x01) == 0x01:    #Judge whether the last bit is 1
-            GPIO.output(data,GPIO.HIGH)  #1
+        GPIO.output(sck,GPIO.LOW)  ##set sckPin LOW 
+        if (da & 0x01) == 0x01:    ##Judge whether the last bit is 1
+            GPIO.output(data,GPIO.HIGH)  ##1
         else:
-            GPIO.output(data,GPIO.LOW)   #0
-            #set sckPin HIGH , Move data to shift register
+            GPIO.output(data,GPIO.LOW)   ##0
+            ##set sckPin HIGH , Move data to shift register
         GPIO.output(sck,GPIO.HIGH)
-        #Move data one bit to the right
+        ##Move data one bit to the right
         da =da  >> 1
 
 def display(num):
-    #Clock pin of storage register is set to low level
+    ##Clock pin of storage register is set to low level
     GPIO.output(rck,GPIO.LOW)
-    #function, receive data
+    ##function, receive data
     bitshift(num)
-    #Clock pin of storage register is set to high level
-    #At this time, the data will be output from the Q0 ~ Q7 port
+    ##Clock pin of storage register is set to high level
+    ##At this time, the data will be output from the Q0 ~ Q7 port
     GPIO.output(rck,GPIO.HIGH)
 
 print("test...")
 while True:
-    for a in range(0,10):  #display 0~9
+    for a in range(0,10):  ##display 0~9
         display(a)
         sleep(1)
         
 GPIO.cleanup()
 ```
 
-## Project 14：Button-controlled LED
+### Project 14：Button-controlled LED
 
-### Description：
+ Description：
 
 Usually, a complete open loop control is made of external information input. Controller and actuator.
 
@@ -1743,7 +1743,7 @@ The external information is input into controller which can analyze the input da
 
 A button-controlled LED is decided by an open loop control. Next, we will make a desk lamp with a button, an LED and RPi. LED is on when button is pressed, on the contrary, it will be off.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -1753,13 +1753,13 @@ A button-controlled LED is decided by an open loop control. Next, we will make a
 | ![b46a1a082eb9904aa7cb060eaac8056d](media/b46a1a082eb9904aa7cb060eaac8056d.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              | ![18bb6bf778ae422d2850d8f36ed1ac4d](media/18bb6bf778ae422d2850d8f36ed1ac4d.png) |
 | 220Ω Resistor*1                                              | Jumper Wires                                                 | 10KΩ Resistor*1                                              |
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/56df70c171335f4e2432a1e1eb4bb4ab.png)
 
 ![](media/eb5b50bc4a31b3d370d9ddff64b452a9.png)
 
-### Eliminate Button Shaking
+ Eliminate Button Shaking
 
 The LED status won’t jump into new state immediately when button is pressed. There will be a short continuous shaking before into new status, which is similar with release status.
 
@@ -1769,7 +1769,7 @@ Therefore, there will be many a presses and release actions. The shaking will mi
 
 The button means being pressed when its status is stable.
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter"
 
@@ -1789,42 +1789,42 @@ Note: Press Ctrl + C on keyboard and exit code running
 import RPi.GPIO as GPIO
 from time import sleep
 
-LED = 27  #set ledPin
-button = 18 #set buttonPin
-val = 0 #Button variables
-count = 0 #Record the number of button presses
-flag = 0 #Odd even variable
-GPIO.setmode(GPIO.BCM)  # use BCM numbers
+LED = 27  ##set ledPin
+button = 18 ##set buttonPin
+val = 0 ##Button variables
+count = 0 ##Record the number of button presses
+flag = 0 ##Odd even variable
+GPIO.setmode(GPIO.BCM)  ## use BCM numbers
 
-GPIO.setup(LED,GPIO.OUT)   #set the ledPin OUTPUT mode
-GPIO.setup(button,GPIO.IN,GPIO.PUD_UP) #set the buttonPin INPUT mode and buttonPin to PULL UP
+GPIO.setup(LED,GPIO.OUT)   ##set the ledPin OUTPUT mode
+GPIO.setup(button,GPIO.IN,GPIO.PUD_UP) ##set the buttonPin INPUT mode and buttonPin to PULL UP
 
 while True:
-    val = GPIO.input(button)  #Receive button value
-    #print("button = %d"%(val))
-    if(val == 0):   #if button is pressed
-        sleep(0.01) #Eliminate button jitter
-        val = GPIO.input(button)  #Receive button value
-        if(val == 1):  #Loosen the button
-            count = count + 1  #Count the number of clicks on the button
+    val = GPIO.input(button)  ##Receive button value
+    ##print("button = %d"%(val))
+    if(val == 0):   ##if button is pressed
+        sleep(0.01) ##Eliminate button jitter
+        val = GPIO.input(button)  ##Receive button value
+        if(val == 1):  ##Loosen the button
+            count = count + 1  ##Count the number of clicks on the button
             print("count = %d" %count)
     
-    flag = count % 2  #Remainder 2 ,Even is 0, odd is 1
+    flag = count % 2  ##Remainder 2 ,Even is 0, odd is 1
     if(flag == 1):
-        GPIO.output(LED,GPIO.HIGH)  #turn on led
+        GPIO.output(LED,GPIO.HIGH)  ##turn on led
     else:
-        GPIO.output(LED,GPIO.LOW)  #turn off led
+        GPIO.output(LED,GPIO.LOW)  ##turn off led
         
-GPIO.cleanup() #release all GPIO
+GPIO.cleanup() ##release all GPIO
 ```
 
-## Project 15：Responder
+### Project 15：Responder
 
-### Description：
+ Description：
 
 A responder is someone who answers a question or who acts quickly in response to some event. In this lesson, we will show you how to make a responder and introduce its working principle.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -1836,7 +1836,7 @@ A responder is someone who answers a question or who acts quickly in response to
 | ![18bb6bf778ae422d2850d8f36ed1ac4d](media/18bb6bf778ae422d2850d8f36ed1ac4d.png) | ![image-20230525140616080](media/image-20230525140616080.png) |                                                              |
 | 10KΩ Resistor*4                                              | Button Switch *4                                             |                                                              |
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/843984784bbd495aa7484c0372339f17.png)
 
@@ -1848,7 +1848,7 @@ You could assume a scene that three competitors in knowledge quiz.
 
 Everyone has a responder and an LED. Corresponding LED will turn on if one presses his own responder, however, others’ won’t be on. What’s more, a questioner has a button to control their LEDs. After a round of game, LEDs are off, the quiz restarts.
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter"
 
@@ -1868,57 +1868,57 @@ Note: Press Ctrl + C on keyboard and exit code running.
 import RPi.GPIO as GPIO
 from time import sleep
 
-# led colour
+## led colour
 red = 26 
 yellow = 19
 blue = 13
 
-#set button pin
-#Player's button
+##set button pin
+##Player's button
 key1 = 23
 key2 = 24
 key3 = 25
-#Button for the author
+##Button for the author
 reset = 18  
-flag = True  #One sign quantity for restriction, only one light can be on
+flag = True  ##One sign quantity for restriction, only one light can be on
 
-GPIO.setmode(GPIO.BCM) #use BCM numbers
-#set the led Pin OUTPUT mode
+GPIO.setmode(GPIO.BCM) ##use BCM numbers
+##set the led Pin OUTPUT mode
 GPIO.setup(red,GPIO.OUT)  
 GPIO.setup(yellow,GPIO.OUT)  
 GPIO.setup(blue,GPIO.OUT)
-#set the button pin INPUT mode and PUD_UP
+##set the button pin INPUT mode and PUD_UP
 GPIO.setup(key1,GPIO.IN,GPIO.PUD_UP)  
 GPIO.setup(key2,GPIO.IN,GPIO.PUD_UP)  
 GPIO.setup(key3,GPIO.IN,GPIO.PUD_UP)  
 GPIO.setup(reset,GPIO.IN,GPIO.PUD_UP)  
 
-while True:  #loop
-    if not GPIO.input(key1) and flag == True:  #Judge if player 1's button is pressed
+while True:  ##loop
+    if not GPIO.input(key1) and flag == True:  ##Judge if player 1's button is pressed
         GPIO.output(red,GPIO.HIGH)
         flag = False
-    if not GPIO.input(key2) and flag == True:  #Judge if player 2's button is pressed
+    if not GPIO.input(key2) and flag == True:  ##Judge if player 2's button is pressed
         GPIO.output(yellow,GPIO.HIGH)
         flag = False
-    if not GPIO.input(key3) and flag == True:  #Judge if player 3's button is pressed
+    if not GPIO.input(key3) and flag == True:  ##Judge if player 3's button is pressed
         GPIO.output(blue,GPIO.HIGH)
         flag = False
-    if not GPIO.input(reset):  #The writer's button is pressed
+    if not GPIO.input(reset):  ##The writer's button is pressed
         GPIO.output(red,GPIO.LOW)
         GPIO.output(yellow,GPIO.LOW)
         GPIO.output(blue,GPIO.LOW)
         flag = True
 
-GPIO.cleanup()  #release all GPIO
+GPIO.cleanup()  ##release all GPIO
 ```
 
-## Project 16：PIR Motion Sensor
+### Project 16：PIR Motion Sensor
 
-### Description：
+ Description：
 
 In this lesson, we will learn about PIR motion sensor.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) | ![](media/c5aadd2106124e3a345af17ce33176ca.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------- |
@@ -1926,7 +1926,7 @@ In this lesson, we will learn about PIR motion sensor.
 | ![66ae3d529b4ff20c52d6cb021e4c62cb](media/66ae3d529b4ff20c52d6cb021e4c62cb.jpeg) | ![cd25a4727c48f7d48aa0160cc54ecafb](media/cd25a4727c48f7d48aa0160cc54ecafb.png) | ![b46a1a082eb9904aa7cb060eaac8056d](media/b46a1a082eb9904aa7cb060eaac8056d.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png) |
 | PIR Motion Sensor*1                                          | LED - Red *1                                                 | 220Ω Resistor*1                                              | Jumper Wires                                    |
 
-### Component Knowledge
+ Component Knowledge
 
 **PIR Motion Sensor：**
 
@@ -1936,13 +1936,13 @@ Human body will emit IR ray, although weak but can be detected. Sensor will outp
 
 Note: Nothing but moving person can be detected, with the detection distance is up to 3m.
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/141d346dc2bd7d36c1478faff22908b6.png)
 
 ![](media/b0a265ba193a9879fb34c45f24ae9c4f.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter"
 
@@ -1965,18 +1965,18 @@ import time
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
-ledPin = 5  #set led pin
-pirPin = 18  #set PYE-IR pin
+ledPin = 5  ##set led pin
+pirPin = 18  ##set PYE-IR pin
 GPIO.setup(ledPin,GPIO.OUT)
 GPIO.setup(pirPin,GPIO.IN)
  
 
-while True:                     ##loop 
-    if GPIO.input(pirPin):    #When someone is detected
-        GPIO.output(ledPin,GPIO.HIGH)  #turn on the led
+while True:                     ###loop 
+    if GPIO.input(pirPin):    ##When someone is detected
+        GPIO.output(ledPin,GPIO.HIGH)  ##turn on the led
         print("somebody")
     else:
-        GPIO.output(ledPin,GPIO.LOW)  #turn off led
+        GPIO.output(ledPin,GPIO.LOW)  ##turn off led
         print("nobody")
     
 GPIO.cleanup()
@@ -1984,13 +1984,13 @@ GPIO.cleanup()
 
 
 
-## Project 17：Fire Alarm
+### Project 17：Fire Alarm
 
-### Description：
+ Description：
 
 A flame detector is a sensor designed to detect and respond to the presence of a flame or fire, allowing flame detection.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) | ![](media/c5aadd2106124e3a345af17ce33176ca.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------- |
@@ -1998,7 +1998,7 @@ A flame detector is a sensor designed to detect and respond to the presence of a
 | ![f05a177b0d2d9c0effccf535151bbfdb](media/f05a177b0d2d9c0effccf535151bbfdb.png) | ![75c727f92f45b6e5bfe0b2940931e6c8](media/75c727f92f45b6e5bfe0b2940931e6c8.png) | ![18bb6bf778ae422d2850d8f36ed1ac4d](media/18bb6bf778ae422d2850d8f36ed1ac4d.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png) |
 | Active Buzzer *1                                             | Flame Sensor *1                                              | 10KΩ Resistor*1                                              | Jumper Wires                                    |
 
-### Component Knowledge
+ Component Knowledge
 
 **Flame Sensor：**
 
@@ -2010,13 +2010,13 @@ Flame sensor is used to detect fire source with wavelength in 760nm～1100nm, de
 
 Notice that keep flame sensor away from fire source to defend its damage for its working temperature is between -25°-85°
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/cf920e1d7db7c5905292baa2e01eb268.png)
 
 ![](media/fce67c08fbe3c0aa4a550d2859c7e58a.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter"
 
@@ -2036,35 +2036,35 @@ Note: Press Ctrl + C on keyboard and exit code running
 import RPi.GPIO as GPIO
 from time import sleep
 
-#define buzzer pin
+##define buzzer pin
 buzPin = 27
-#define flame Pin
+##define flame Pin
 flamePin = 18
 
-val = 0  #
+val = 0  ##
 
-GPIO.setmode(GPIO.BCM) #use BCM numbers
-GPIO.setup(buzPin,GPIO.OUT)  #set the buzPin OUTPUT
-GPIO.setup(flamePin,GPIO.IN,GPIO.PUD_UP) #set the flamePin INPUT
+GPIO.setmode(GPIO.BCM) ##use BCM numbers
+GPIO.setup(buzPin,GPIO.OUT)  ##set the buzPin OUTPUT
+GPIO.setup(flamePin,GPIO.IN,GPIO.PUD_UP) ##set the flamePin INPUT
 
 while True:
-    val = GPIO.input(flamePin) #Receives the value of the flame sensor
+    val = GPIO.input(flamePin) ##Receives the value of the flame sensor
     print("val = %d" %val)
-    if (val == 1):  #When flame is detected
-        GPIO.output(buzPin,GPIO.HIGH)  #Buzzer turn on
+    if (val == 1):  ##When flame is detected
+        GPIO.output(buzPin,GPIO.HIGH)  ##Buzzer turn on
     else:
-        GPIO.output(buzPin,GPIO.LOW)   #buzzer turn off
+        GPIO.output(buzPin,GPIO.LOW)   ##buzzer turn off
         
-GPIO.cleanup() # Release all GPIO
+GPIO.cleanup() ## Release all GPIO
 ```
 
-## Project 18：Electronic Hourglass
+### Project 18：Electronic Hourglass
 
-### Description：
+ Description：
 
 An hourglass (or sandglass, sand timer, sand clock or egg timer) is a device used to measure the passage of time. It comprises two glass bulbs connected vertically by a narrow neck that allows a regulated flow of a substance (historically sand) from the upper bulb to the lower one. Typically the upper and lower bulbs are symmetric so that the hourglass will measure the same duration regardless of orientation. The specific duration of time a given hourglass measures is determined by factors including the quantity and coarseness of the particulate matter, the bulb size, and the neck width.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2074,7 +2074,7 @@ An hourglass (or sandglass, sand timer, sand clock or egg timer) is a device use
 | ![b46a1a082eb9904aa7cb060eaac8056d](media/b46a1a082eb9904aa7cb060eaac8056d.png) | ![18bb6bf778ae422d2850d8f36ed1ac4d](media/18bb6bf778ae422d2850d8f36ed1ac4d.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              |
 | 220Ω Resistor*2                                              | 10KΩ Resistor*1                                              | Jumper Wires                                                 |
 
-### Component Knowledge
+ Component Knowledge
 
 **Ball Tilt Sensor**：
 
@@ -2088,13 +2088,13 @@ Here is the principle of tilt sensor to illustrate how it works:
 
 ![](media/a589e5da5f5f91c3d16a4dded9e33cb1.png)
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/a811fe1c36aa601e9a48d3ada938c917.png)
 
 ![](media/749562134c34f33283faf8d1e4ba8f13.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter"
 
@@ -2114,23 +2114,23 @@ Note: Press Ctrl + C on keyboard and exit code running.
 import RPi.GPIO as GPIO
 from time import sleep
 
-#define led pin
+##define led pin
 led1Pin = 17
 led2Pin = 27
-#define Ball Tilt Sensor Pin
+##define Ball Tilt Sensor Pin
 tiltPin = 18
 
 
-GPIO.setmode(GPIO.BCM) #use BCM unmbers
-GPIO.setup(led1Pin,GPIO.OUT)  #set the ledPin OUTPUT mode
+GPIO.setmode(GPIO.BCM) ##use BCM unmbers
+GPIO.setup(led1Pin,GPIO.OUT)  ##set the ledPin OUTPUT mode
 GPIO.setup(led2Pin,GPIO.OUT)
-GPIO.output(led1Pin,GPIO.HIGH)  # make ledPin output HIGH level
-GPIO.output(led2Pin,GPIO.LOW)  # make ledPin output LOW level
+GPIO.output(led1Pin,GPIO.HIGH)  ## make ledPin output HIGH level
+GPIO.output(led2Pin,GPIO.LOW)  ## make ledPin output LOW level
 GPIO.setup(tiltPin,GPIO.IN,GPIO.PUD_UP)
-pwm1 = GPIO.PWM(led1Pin,1000)  #create a pwm1 instance
-pwm1.start(0)  #start pwm1
-pwm2 = GPIO.PWM(led2Pin,1000)  #create a pwm2 instance
-pwm2.start(0)  #start pwm2
+pwm1 = GPIO.PWM(led1Pin,1000)  ##create a pwm1 instance
+pwm1.start(0)  ##start pwm1
+pwm2 = GPIO.PWM(led2Pin,1000)  ##create a pwm2 instance
+pwm2.start(0)  ##start pwm2
 val1 = 50
 val2 = 50
 
@@ -2138,12 +2138,12 @@ while True:
     if not GPIO.input(tiltPin):
         val1 = val1 + 1
         val2 = val2 - 1
-        if (val1 >= 100):  #Limit PWM value to no more than 100
+        if (val1 >= 100):  ##Limit PWM value to no more than 100
             val1 = 100
-        if (val2 < 0):    #Limit PWM value not less than 0
+        if (val2 < 0):    ##Limit PWM value not less than 0
             val2 = 0
         print("led1 = %1.0f" %(val1))
-        pwm1.ChangeDutyCycle(val1)  #change the frequency
+        pwm1.ChangeDutyCycle(val1)  ##change the frequency
         pwm2.ChangeDutyCycle(val2)
         sleep(0.1)
     else:
@@ -2158,21 +2158,21 @@ while True:
         pwm2.ChangeDutyCycle(val2)
         sleep(0.1)
         
-pwm1.stop()  #stop pwm1
+pwm1.stop()  ##stop pwm1
 
-GPIO.cleanup()    #release all GPIO
+GPIO.cleanup()    ##release all GPIO
 ```
 
 
 
-## Project 19：Stepless Dimming
+### Project 19：Stepless Dimming
 
-### Description：
+ Description：
 
 A stepless dimming control method of a lighting system is applicable to the situations where a light source for a lighting terminal is a fluorescent lamp
 and/or an LED lamp.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) | ![](media/c5aadd2106124e3a345af17ce33176ca.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------- |
@@ -2180,7 +2180,7 @@ and/or an LED lamp.
 | ![](media/6747cb1ff44097c93da4a0ce7d2e4fac.png)              | ![image-20230525153053972](media/image-20230525153053972.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              |                                                 |
 | Potentiometer*1                                              | PCF8591 A/D Converter Module*1                               | Jumper Wires                                                 |                                                 |
 
-### Component Knowledge
+ Component Knowledge
 
 **Keyestudio PCF8591 A/D Converter Module：**
 
@@ -2220,7 +2220,7 @@ Used to read the address of pin A0\~A3.
 
 The address of analog output pin AOUT: 0x40, that is, 64 converting from hexadecimal to decimal.
 
-A0 = 0x40 \#\#A0 ----\> port address
+A0 = 0x40 \##\##A0 ----\> port address
 
 A1 = 0x41
 
@@ -2236,7 +2236,7 @@ We could convert the resistance’s change into the voltage’s when setting cir
 
 Wiring according to the below figure and rotate clockwise, resistance value reduces.
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/87f632c39b0360057fa161c3ae5e1c8f.png)
 
@@ -2244,7 +2244,7 @@ Wiring according to the below figure and rotate clockwise, resistance value redu
 
 Note: PCF8591 module comes with an LED connected to Aout pint
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter"
 
@@ -2263,25 +2263,25 @@ Note: Press Ctrl + C on keyboard and exit code running.
 ```python
 import smbus
 import time
-address = 0x48 #default address of PCF8591
-bus=smbus.SMBus(1)  #Create an instance of smbus
-cmd=0x40 #command
-# A0 = 0x40      ##A0  ----> port address
-# A1 = 0x41
-# A2 = 0x42
-# A3 = 0x43
-def analogRead(chn):   #read ADC value,chn:0,1,2,3
+address = 0x48 ##default address of PCF8591
+bus=smbus.SMBus(1)  ##Create an instance of smbus
+cmd=0x40 ##command
+## A0 = 0x40      ###A0  ----> port address
+## A1 = 0x41
+## A2 = 0x42
+## A3 = 0x43
+def analogRead(chn):   ##read ADC value,chn:0,1,2,3
     value = bus.read_byte_data(address,cmd+chn)
     return value
  
-def analogWrite(value):#write DAC value
+def analogWrite(value):##write DAC value
     bus.write_byte_data(address,cmd,value) 
  
 def loop():
     while True:
-        value = analogRead(0) #read the ADC value ofchannel 0
-        analogWrite(value) #write the DAC value
-        voltage = value / 255.0 * 3.3 #calculate the voltage value
+        value = analogRead(0) ##read the ADC value ofchannel 0
+        analogWrite(value) ##write the DAC value
+        voltage = value / 255.0 * 3.3 ##calculate the voltage value
         print ('ADC Value : %d, Voltage : %.2f'%(value,voltage))
         time.sleep(0.01)
 
@@ -2296,7 +2296,7 @@ if __name__ == '__main__':
         destroy()
 ```
 
-### Explanation：
+ Explanation：
 
 **smbus**
 
@@ -2314,13 +2314,13 @@ D/A analog value outputs, address is address of pcf8591 module，cmd outputs the
 
 [https://pypi.org/project/smbus2/0.1.2/](https://pypi.org/project/smbus2/0.1.2/)
 
-## Project 20：Photoresistor
+### Project 20：Photoresistor
 
-### Description：
+ Description：
 
 Photo resistor (Photovaristor) is a resistor whose resistance varies according to different incident light strength. It's made based on the photoelectric effect of semiconductor. In this lesson, let’s explain how it works.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) | ![](media/c5aadd2106124e3a345af17ce33176ca.png)              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2330,7 +2330,7 @@ Photo resistor (Photovaristor) is a resistor whose resistance varies according t
 | ![image-20230525153053972](media/image-20230525153053972.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              |                                                              |                                                              |
 | Keyestudio PCF8591 A/D Converter Module*1                    | Jumper Wires                                                 |                                                              |                                                              |
 
-### Component Knowledge
+ Component Knowledge
 
 **Photoresistor：**
 
@@ -2340,13 +2340,13 @@ Photo resistor (Photovaristor) is a resistor whose resistance varies according t
 
 If incident light on a photoresistor exceeds a certain frequency, photons absorbed by the semiconductor give bound electrons enough energy to jump into the conduction band. The resulting free electrons (and their hole partners) conduct electricity, thereby lowering resistance.
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/62d7ded39ba13d8789248e93165013ae.png)
 
 ![](media/b92c4cb38844f1ee074779eae270d650.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Note: in the experiment, I2C communication is used. We need to check the iic address first( enter command：i2cdetect -y 1 and press “Enter”. If failed, check the wiring is correct or not. If correct, you need to enable I2C communication function of Raspberry Pi, project 19 is for your reference.
 
@@ -2375,44 +2375,44 @@ GPIO.setwarnings(False)
 led = 5
 GPIO.setup(led,GPIO.OUT)
  
-address = 0x48 ##address  ---> device address
-cmd = 0x40     ##DA converter command
-A0 = 0x40      ##A0  ----> port address
+address = 0x48 ###address  ---> device address
+cmd = 0x40     ###DA converter command
+A0 = 0x40      ###A0  ----> port address
 A1 = 0x41
 A2 = 0x42
 A3 = 0x43
-bus = smbus.SMBus(1)            ##start the bus
+bus = smbus.SMBus(1)            ###start the bus
 
-def analogRead(count):   #function,read analog data
+def analogRead(count):   ##function,read analog data
     read_val = bus.read_byte_data(address,cmd+count)
     return read_val
 
-while True:                     ##loop 
-    #Vout = 10                  ##10*0.0196=0.196V
-    #bus.write_byte_data(address,cmd,Vout) ##DA converter
-    value = analogRead(0) ##read A0 data
-    if(value<80):   #When the ambient brightness is less than 80, the LED light will be on
+while True:                     ###loop 
+    ##Vout = 10                  ###10*0.0196=0.196V
+    ##bus.write_byte_data(address,cmd,Vout) ###DA converter
+    value = analogRead(0) ###read A0 data
+    if(value<80):   ##When the ambient brightness is less than 80, the LED light will be on
         GPIO.output(led,GPIO.HIGH)
     else:
         GPIO.output(led,GPIO.LOW)
 
-    print("data:%1.0f" %(value))   ##print data
+    print("data:%1.0f" %(value))   ###print data
     
-time.sleep(0.5)                ##delay 0.5 second
+time.sleep(0.5)                ###delay 0.5 second
 GPIO.cleanup()
 ```
 
 
 
-## Project 21：Sound-activated Light
+### Project 21：Sound-activated Light
 
-### Description：
+ Description：
 
 You might find the lights automatically on when you pass them, nevertheless, they will be off if the surrounding is quiet. Do you know why?
 
 Actually, it is sound sensor that controls them on and off.
 
-### Components:
+ Components:
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2422,7 +2422,7 @@ Actually, it is sound sensor that controls them on and off.
 | ![e315ef2757b4154299e38350c4e93462](media/e315ef2757b4154299e38350c4e93462.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              | ![image-20230525153053972](media/image-20230525153053972.png) |
 | Sound Sensor*1                                               | Jumper Wires                                                 | Keyestudio PCF8591 A/D Converter Module*1                    |
 
-### Component Knowledge
+ Component Knowledge
 
 A sound sensor is defined as a module that detects sound waves through its intensity and converting it to electrical signals.
 
@@ -2430,13 +2430,13 @@ The sound sensor has a built-in capacitive electret microphone which is highly s
 
 The module can be applied to noise monitoring in traffic artery, and detection of noises within the boundary of industrial enterprises, factories, and construction sites, detection of noises in urban regions, and noise detection and assessment of living surroundings. 
 
-### Schematic and Connection Diagram：
+ Schematic and Connection Diagram：
 
 ![](media/5d8a9db8a2ce59f8ffb251ab054a8bbe.png)
 
 ![](media/13628b82afe32eb71bc4c2b54cb8d294.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Note: in the experiment, I2C communication is used. We need to check the iic address first( enter command：i2cdetect -y 1 and press“Enter”. If failed, check the wiring is correct or not. If correct, you need to enable I2C communication function of Raspberry Pi, project 19 is for your reference.
 
@@ -2465,23 +2465,23 @@ GPIO.setwarnings(False)
 led = 5
 GPIO.setup(led,GPIO.OUT)
  
-address = 0x48 ##address  ---> device address
-cmd = 0x40     ##DA converter command
-A0 = 0x40      ##A0  ----> port address
+address = 0x48 ###address  ---> device address
+cmd = 0x40     ###DA converter command
+A0 = 0x40      ###A0  ----> port address
 A1 = 0x41
 A2 = 0x42
 A3 = 0x43
-bus = smbus.SMBus(1)            ##start the bus
+bus = smbus.SMBus(1)            ###start the bus
 
 flag = 0
 mode = 0
 
-def analogRead(count):   #function,read analog data
+def analogRead(count):   ##function,read analog data
     read_val = bus.read_byte_data(address,cmd+count)
     return read_val
 
-while True:                     ##loop
-    value = analogRead(0) ##read A0 data
+while True:                     ###loop
+    value = analogRead(0) ###read A0 data
     if(value>50):
         flag += 1
         mode = flag % 2
@@ -2490,23 +2490,23 @@ while True:                     ##loop
     else:
         GPIO.output(led,GPIO.HIGH)
 
-    print("data:%1.0f" %(value))   ##print data
-    time.sleep(0.05)                ##delay 0.05 second
+    print("data:%1.0f" %(value))   ###print data
+    time.sleep(0.05)                ###delay 0.05 second
     
 GPIO.cleanup()
 ```
 
 
 
-## Project 22：LCD1602 & MQ-2 Gas Leakage Alarm
+### Project 22：LCD1602 & MQ-2 Gas Leakage Alarm
 
-### Description：
+ Description：
 
 Some households have access to gas, which is composed of CO, CO2, N2, H2 and CH4. CO is one of toxic gases. People will be in danger if absorbing too much CO. However, we could tackle with this problem over a gas leakage alarm.
 
 Gas MQ-2 leakage alarm detects the presence of a combustible or toxic gas and react by displaying a reading, setting off an audible or visual alarm.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) | ![](media/c5aadd2106124e3a345af17ce33176ca.png)              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2516,7 +2516,7 @@ Gas MQ-2 leakage alarm detects the presence of a combustible or toxic gas and re
 | ![image-20230525153053972](media/image-20230525153053972.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              | ![image-20230525120528651](media/image-20230525120528651.png) |                                                              |
 | PCF8591 A/D Converter Module*1                               | Jumper Wires                                                 | M-F Dupont Line                                              |                                                              |
 
-### Component Knowledge
+ Component Knowledge
 
 MQ-2 gas sensor adopts the material sensitive to gas------SnO2 with low electricity conductivity. When beset with combustible gas, its electricity conductivity varies with the of the concentration of flammable gas, however, the simple circuit could convert the change of  electricity conductivity into the output signals of the concentration of gas sensor.
 
@@ -2544,13 +2544,13 @@ It could show the characters or numbers in 16 rows and 2 columns.
 
 LCD1602 usually uses eight data cable to provide the data of Data0\~Data7, however, it supports“4Bits”mode which is so called four data cables so as to save GPIO ports.
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/f74a594c0359c12f0e7ed93641d6c65b.png)
 
 ![](media/9869034bfb6e61fcbd4f07fe2f770590.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Note: in the experiment, I2C communication is used. We need to check the iic address first( enter command：i2cdetect -y 1 and press“Enter”. If failed, check the wiring is correct or not. If correct, you need to enable I2C communication function of Raspberry Pi, project 19 is for your reference.
 
@@ -2569,12 +2569,12 @@ Note: Press Ctrl + C on keyboard and exit code running.
 **Example Code：**
 
 ```python
-#!/usr/bin/python
-#import
+##!/usr/bin/python
+##import
 import RPi.GPIO as GPIO
 import time
 import smbus
-# Define GPIO to LCD mapping
+## Define GPIO to LCD mapping
 LCD_RS = 19
 LCD_E  = 13
 LCD_D4 = 22
@@ -2582,87 +2582,87 @@ LCD_D5 = 27
 LCD_D6 = 17
 LCD_D7 = 4
  
-# Define some device constants
-LCD_WIDTH = 16    # Maximum characters per line
+## Define some device constants
+LCD_WIDTH = 16    ## Maximum characters per line
 LCD_CHR = True
 LCD_CMD = False
  
-LCD_LINE_1 = 0x80 # LCD RAM address for the 1st line
-LCD_LINE_2 = 0xC0 # LCD RAM address for the 2nd line
+LCD_LINE_1 = 0x80 ## LCD RAM address for the 1st line
+LCD_LINE_2 = 0xC0 ## LCD RAM address for the 2nd line
 
-# Timing constants
+## Timing constants
 E_PULSE = 0.0005
 E_DELAY = 0.0005
 
-#pcf8591
+##pcf8591
 address=0x48
 cmd=0x40
-A0=0x40##A0---->port address
+A0=0x40###A0---->port address
 A1=0x41
 A2=0x42
 A3=0x43
 bus=smbus.SMBus(1)
 
-#buzzer
-buzPin = 20  #set buzPin to 20
-GPIO.setmode(GPIO.BCM) # use BCM numbers
-GPIO.setup(buzPin,GPIO.OUT)  #set buzPin OUTPUT mode
+##buzzer
+buzPin = 20  ##set buzPin to 20
+GPIO.setmode(GPIO.BCM) ## use BCM numbers
+GPIO.setup(buzPin,GPIO.OUT)  ##set buzPin OUTPUT mode
 
  
 def main():
-    # Main program block
+    ## Main program block
     GPIO.setwarnings(False)
-    GPIO.setmode(GPIO.BCM)       # Use BCM GPIO numbers
-    GPIO.setup(LCD_E, GPIO.OUT)  # E
-    GPIO.setup(LCD_RS, GPIO.OUT) # RS
-    GPIO.setup(LCD_D4, GPIO.OUT) # DB4
-    GPIO.setup(LCD_D5, GPIO.OUT) # DB5
-    GPIO.setup(LCD_D6, GPIO.OUT) # DB6
-    GPIO.setup(LCD_D7, GPIO.OUT) # DB7
+    GPIO.setmode(GPIO.BCM)       ## Use BCM GPIO numbers
+    GPIO.setup(LCD_E, GPIO.OUT)  ## E
+    GPIO.setup(LCD_RS, GPIO.OUT) ## RS
+    GPIO.setup(LCD_D4, GPIO.OUT) ## DB4
+    GPIO.setup(LCD_D5, GPIO.OUT) ## DB5
+    GPIO.setup(LCD_D6, GPIO.OUT) ## DB6
+    GPIO.setup(LCD_D7, GPIO.OUT) ## DB7
     
-    # Initialise display
+    ## Initialise display
     lcd_init()
     
     while True:
         temp = analogRead(0)
         print("MQ-2 = %s"%(temp))
-        #display
-        # Send some test
+        ##display
+        ## Send some test
         lcd_string("MQ-2",LCD_LINE_1)
         lcd_string(temp,LCD_LINE_2)
         time.sleep(0.1)
 
-#LM35, require Temperature
+##LM35, require Temperature
 def analogRead(count):
     read_val=bus.read_byte_data(address,cmd+count)
     if(read_val > 60):
-        GPIO.output(buzPin,GPIO.HIGH)  #Buzzer ring
+        GPIO.output(buzPin,GPIO.HIGH)  ##Buzzer ring
     else:
-        GPIO.output(buzPin,GPIO.LOW)  #Buzzer stop
+        GPIO.output(buzPin,GPIO.LOW)  ##Buzzer stop
 
-    mq2_val = str(read_val)  # int to string
+    mq2_val = str(read_val)  ## int to string
     return mq2_val
 
  
 def lcd_init():
-    # Initialise display
-    lcd_byte(0x33,LCD_CMD) # 110011 Initialise
-    lcd_byte(0x32,LCD_CMD) # 110010 Initialise
-    lcd_byte(0x06,LCD_CMD) # 000110 Cursor move direction
-    lcd_byte(0x0C,LCD_CMD) # 001100 Display On,Cursor Off, Blink Off
-    lcd_byte(0x28,LCD_CMD) # 101000 Data length, number of lines, font size
-    lcd_byte(0x01,LCD_CMD) # 000001 Clear display
+    ## Initialise display
+    lcd_byte(0x33,LCD_CMD) ## 110011 Initialise
+    lcd_byte(0x32,LCD_CMD) ## 110010 Initialise
+    lcd_byte(0x06,LCD_CMD) ## 000110 Cursor move direction
+    lcd_byte(0x0C,LCD_CMD) ## 001100 Display On,Cursor Off, Blink Off
+    lcd_byte(0x28,LCD_CMD) ## 101000 Data length, number of lines, font size
+    lcd_byte(0x01,LCD_CMD) ## 000001 Clear display
     time.sleep(E_DELAY)
  
 def lcd_byte(bits, mode):
-    # Send byte to data pins
-    # bits = data
-    # mode = True  for character
-    #        False for command
+    ## Send byte to data pins
+    ## bits = data
+    ## mode = True  for character
+    ##        False for command
     
-    GPIO.output(LCD_RS, mode) # RS
+    GPIO.output(LCD_RS, mode) ## RS
     
-    # High bits
+    ## High bits
     GPIO.output(LCD_D4, False)
     GPIO.output(LCD_D5, False)
     GPIO.output(LCD_D6, False)
@@ -2676,10 +2676,10 @@ def lcd_byte(bits, mode):
     if bits&0x80==0x80:
         GPIO.output(LCD_D7, True)
     
-    # Toggle 'Enable' pin
+    ## Toggle 'Enable' pin
     lcd_toggle_enable()
     
-    # Low bits
+    ## Low bits
     GPIO.output(LCD_D4, False)
     GPIO.output(LCD_D5, False)
     GPIO.output(LCD_D6, False)
@@ -2693,11 +2693,11 @@ def lcd_byte(bits, mode):
     if bits&0x08==0x08:
         GPIO.output(LCD_D7, True)
     
-    # Toggle 'Enable' pin
+    ## Toggle 'Enable' pin
     lcd_toggle_enable()
  
 def lcd_toggle_enable():
-    # Toggle enable
+    ## Toggle enable
     time.sleep(E_DELAY)
     GPIO.output(LCD_E, True)
     time.sleep(E_PULSE)
@@ -2705,7 +2705,7 @@ def lcd_toggle_enable():
     time.sleep(E_DELAY)
  
 def lcd_string(message,line):
-    # Send string to display
+    ## Send string to display
     
     message = message.ljust(LCD_WIDTH," ")
     
@@ -2729,13 +2729,13 @@ if __name__ == '__main__':
 
 
 
-## Project 23：Water Level Monitor
+### Project 23：Water Level Monitor
 
-### Description：
+ Description：
 
 If you have ever had a water heater explode or ever tried to make submersible electronics, then you know how important it is to detect when water is around. Let’s know more about water level sensor.
 
-### Components:
+ Components:
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![3af182663cfe16478339230a4588f7d5](media/3af182663cfe16478339230a4588f7d5.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2745,7 +2745,7 @@ If you have ever had a water heater explode or ever tried to make submersible el
 | ![image-20230525153053972](media/image-20230525153053972.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              | ![image-20230525120528651](media/image-20230525120528651.png) |
 | PCF8591 A/D Converter Module*1                               | Jumper Wires                                                 | M-F Dupont Line                                              |
 
-### Component Knowledge
+ Component Knowledge
 
 **Water Level Sensor：**
 
@@ -2755,12 +2755,12 @@ This sensor measures the volume of water drop and water quantity through an arra
 
 It could convert water content to analog signals, and output analog value could be used by function of application. It has the features of low consumption as well.
 
-### Schematic and Connection Diagram：
+ Schematic and Connection Diagram：
 
 ![](media/d0b751b8110bac27f1aba11c1e8b7abe.png)
 ![](media/b7c0b634e88a8682a338a261c48eb0ab.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Note: in the experiment, I2C communication is used. We need to check the iic address first( enter command：i2cdetect -y 1 and press“Enter”. If failed, check the wiring is correct or not. If correct, you need to enable I2C communication function of Raspberry Pi, project 19 is for your reference.
 
@@ -2789,37 +2789,37 @@ GPIO.setwarnings(False)
 buz = 18
 GPIO.setup(buz,GPIO.OUT)
  
-address = 0x48 ##address  ---> device address
-cmd = 0x40     ##DA converter command
-A0 = 0x40      ##A0  ----> port address
+address = 0x48 ###address  ---> device address
+cmd = 0x40     ###DA converter command
+A0 = 0x40      ###A0  ----> port address
 A1 = 0x41
 A2 = 0x42
 A3 = 0x43
-bus = smbus.SMBus(1)            ##start the bus
+bus = smbus.SMBus(1)            ###start the bus
 
 
-def analogRead(count):   #function,read analog data
+def analogRead(count):   ##function,read analog data
     read_val = bus.read_byte_data(address,cmd+count)
     return read_val
 
-while True:                     ##loop
-    value = analogRead(0) ##read A0 data
+while True:                     ###loop
+    value = analogRead(0) ###read A0 data
     if(value>30):
         GPIO.output(buz,GPIO.HIGH)
     else:
         GPIO.output(buz,GPIO.LOW)
 
-    print("data:%1.0f" %(value))   ##print data
-    time.sleep(0.05)                ##delay 0.05 second
+    print("data:%1.0f" %(value))   ###print data
+    time.sleep(0.05)                ###delay 0.05 second
     
 GPIO.cleanup()
 ```
 
 
 
-## Project 24：5V Relay + Water Pump
+### Project 24：5V Relay + Water Pump
 
-### Description：
+ Description：
 
 From a safety perspective, we specially designed this relay module with NO (normally open) and NC (normally closed) terminals. In this lesson, we will learn a special and easy-to-use switch, which is the relay module. Use the relay to start the motor.
 
@@ -2827,7 +2827,7 @@ In daily life, the electronic device is driven by 220V AC and controlled by swit
 
 Therefore, we design a relay module with NO and NC ends. Let’s get started.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![5b4223076c8f4f19ccf62039f929eafd](media/5b4223076c8f4f19ccf62039f929eafd.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) | ![c5aadd2106124e3a345af17ce33176ca](media/c5aadd2106124e3a345af17ce33176ca.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2837,7 +2837,7 @@ Therefore, we design a relay module with NO and NC ends. Let’s get started.
 | ![04efadf25e085be8b0f03379c4242e28](media/04efadf25e085be8b0f03379c4242e28.png) | ![10d87dd4cd26593bab967167fa8087fd](media/10d87dd4cd26593bab967167fa8087fd.png) | ![25a87af18379721f64d86a3de22131c6](media/25a87af18379721f64d86a3de22131c6.jpeg) |                                                              |
 | Screwdriver*1                                                | Jumper Wires                                                 | Water Pump*1                                                 |                                                              |
 
-### Component Knowledge
+ Component Knowledge
 
 **Relay**
 
@@ -2860,13 +2860,13 @@ It is an "automatic switch" that uses a small current to control the operation o
 
 -   Weight: 28 grams
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/6662f0a4c7b034287e392d41ec762477.png)
 
 ![](media/6e4bbab19404629a90d8c2c64897b522.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter".
 
@@ -2886,17 +2886,17 @@ Note: Press Ctrl + C on keyboard and exit code running.
 import RPi.GPIO as GPIO
 from time import sleep
 
-relayPin = 18   #define relay pin
+relayPin = 18   ##define relay pin
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(relayPin,GPIO.OUT)
 
 while True:
-	GPIO.output(relayPin,GPIO.HIGH)  #Starting relay
+	GPIO.output(relayPin,GPIO.HIGH)  ##Starting relay
 	print("turn on")
 	sleep(5)
-	GPIO.output(relayPin,GPIO.LOW)  #Close relay
+	GPIO.output(relayPin,GPIO.LOW)  ##Close relay
 	print("turn off")
 	sleep(1)
 
@@ -2905,13 +2905,13 @@ GPIO.cleanup()
 
 
 
-## Project 25：Watering Flower Device
+### Project 25：Watering Flower Device
 
-### Description：
+ Description：
 
 The household plants are popular in many a communities. They will die if you forget to water them, how about making an automatic watering device?
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![5b4223076c8f4f19ccf62039f929eafd](media/5b4223076c8f4f19ccf62039f929eafd.png) | ![e786c181d83b5f7f5319d5b4db98c97e](media/e786c181d83b5f7f5319d5b4db98c97e.png) | ![c5aadd2106124e3a345af17ce33176ca](media/c5aadd2106124e3a345af17ce33176ca.png) | ![](media/2fbda7debedf290f350fea922548a8a6.png)              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2921,7 +2921,7 @@ The household plants are popular in many a communities. They will die if you for
 | ![image-20230525120528651](media/image-20230525120528651.png) | ![10d87dd4cd26593bab967167fa8087fd](media/10d87dd4cd26593bab967167fa8087fd.png) |                                                              |                                                              |                                                              |
 | M-F Dupont Line                                              | Jumper Wires                                                 |                                                              |                                                              |                                                              |
 
-### Component Knowledge
+ Component Knowledge
 
 **Soil Humidity Sensor：**
 
@@ -2931,13 +2931,13 @@ If the soil is in lack of water, the analog value output by the sensor will decr
 
 Using the sensor with controller makes your plant more comfortable and your garden smarter. The soil humidity sensor module is not as complicated as you might think, and if you need to detect the soil in your project, it will be your best choice.
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/ea4b4fce32b759da7b0ca14005920567.png)
 
 ![](media/6a9cb5f9734c007528532a6aafecfb79.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Note: in the experiment, I2C communication is used. We need to check the iic address first( enter command：i2cdetect -y 1 and press“Enter”. If failed, check the wiring is correct or not. If correct, you need to enable I2C communication function of Raspberry Pi, project 19 is for your reference.
 
@@ -2966,37 +2966,37 @@ GPIO.setwarnings(False)
 pumpPin = 18
 GPIO.setup(pumpPin,GPIO.OUT)
  
-address = 0x48 ##address  ---> device address
-cmd = 0x40     ##DA converter command
-A0 = 0x40      ##A0  ----> port address
+address = 0x48 ###address  ---> device address
+cmd = 0x40     ###DA converter command
+A0 = 0x40      ###A0  ----> port address
 A1 = 0x41
 A2 = 0x42
 A3 = 0x43
-bus = smbus.SMBus(1)            ##start the bus
-while True:                     ##loop 
-    #Vout = 10                  ##10*0.0196=0.196V
-    #bus.write_byte_data(address,cmd,Vout) ##DA converter
-    bus.write_byte(address,A0)     ##which port of the device you want to access
-    value = bus.read_byte(address) ##access the data
-    if(value<30):    #When the soil moisture value is less than 50, turn on the relay to start the water pump
+bus = smbus.SMBus(1)            ###start the bus
+while True:                     ###loop 
+    ##Vout = 10                  ###10*0.0196=0.196V
+    ##bus.write_byte_data(address,cmd,Vout) ###DA converter
+    bus.write_byte(address,A0)     ###which port of the device you want to access
+    value = bus.read_byte(address) ###access the data
+    if(value<30):    ##When the soil moisture value is less than 50, turn on the relay to start the water pump
         GPIO.output(pumpPin,GPIO.HIGH)
     else:
         GPIO.output(pumpPin,GPIO.LOW)
-    print("data:%1.0f" %(value))   ##print data
+    print("data:%1.0f" %(value))   ###print data
     
-time.sleep(0.5)                ##delay 0.5 second
+time.sleep(0.5)                ###delay 0.5 second
 GPIO.cleanup()
 ```
 
 
 
-## Project 26：Servo
+### Project 26：Servo
 
-### Description：
+ Description：
 
 Servo is applied widely, especially for robot like human robots and moving robots. In this lesson, we will learn how it works.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![5b4223076c8f4f19ccf62039f929eafd](media/5b4223076c8f4f19ccf62039f929eafd.png) | ![image-20230525120535513](media/image-20230525120535513.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -3004,7 +3004,7 @@ Servo is applied widely, especially for robot like human robots and moving robot
 | ![c5aadd2106124e3a345af17ce33176ca](media/c5aadd2106124e3a345af17ce33176ca.png) | ![78a1b028bd2d72d56e261175aae5261b](media/78a1b028bd2d72d56e261175aae5261b.png) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              |
 | Breadboard*1                                                 | Servo Motor*1                                                | Jumper Wires                                                 |
 
-### Component Knowledge
+ Component Knowledge
 
 **Servo:**
 
@@ -3014,13 +3014,13 @@ The rotation angle of servo motor is controlled by regulating the duty cycle of 
 
 ![](media/9c287c5ca4f5792f52b8c72d0d2a5448.png)
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/6f0004cfa8bcc392dc5e7d0f62ba8db9.png)
 
 ![](media/d4dc5467a491f3f4ebe29840b29fabdc.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter"
 
@@ -3042,27 +3042,27 @@ Note: Press Ctrl + C on keyboard and exit code running.
 import RPi.GPIO as GPIO
 import time
 
-servo_min_angle = 2.5  #define pulse duty cycle for minimun angle of servo
-servo_max_angle = 12.5  #define pulse duty cycle for maximun angle of servo
+servo_min_angle = 2.5  ##define pulse duty cycle for minimun angle of servo
+servo_max_angle = 12.5  ##define pulse duty cycle for maximun angle of servo
 
-servopin = 18   #servo Pin
-GPIO.setmode(GPIO.BCM)  #BCM numbers
+servopin = 18   ##servo Pin
+GPIO.setmode(GPIO.BCM)  ##BCM numbers
 
 GPIO.setup(servopin,GPIO.OUT)
-p = GPIO.PWM(servopin,50)  #set 50Hz , The working frequency of the steering gear is 50Hz
-p.start(0)  # start PWM
+p = GPIO.PWM(servopin,50)  ##set 50Hz , The working frequency of the steering gear is 50Hz
+p.start(0)  ## start PWM
 time.sleep(2)
 
-#define function, map a value from one range to another range
+##define function, map a value from one range to another range
 def map(angle, val1, val2, min_angle, max_angle):
     return (max_angle-min_angle)*(angle-val1)/(val2-val1)+min_angle
 
-while(True):  #loop
-    p.ChangeDutyCycle(0)   #set 
+while(True):  ##loop
+    p.ChangeDutyCycle(0)   ##set 
     time.sleep(0.4)
     b = input("input Angle:")
     b = int(b)
-    c = map(b, 0, 180, servo_min_angle, servo_max_angle)  #map angle from 0~180 to 2.5~12.5
+    c = map(b, 0, 180, servo_min_angle, servo_max_angle)  ##map angle from 0~180 to 2.5~12.5
     p.ChangeDutyCycle(c) 
     time.sleep(0.4)
     
@@ -3072,13 +3072,13 @@ GPIO.cleanup()
 
 
 
-## Project 27：L293D Driver Motor
+### Project 27：L293D Driver Motor
 
-### Description：
+ Description：
 
 In generally, we use a DC motor to make smart car. What should we do if we want to control the rotation speed and direction? Here, we need an L293D driver motor.
 
-### Components:
+ Components:
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![5b4223076c8f4f19ccf62039f929eafd](media/5b4223076c8f4f19ccf62039f929eafd.png) | ![image-20230525120535513](media/image-20230525120535513.png) | ![c5aadd2106124e3a345af17ce33176ca](media/c5aadd2106124e3a345af17ce33176ca.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -3086,7 +3086,7 @@ In generally, we use a DC motor to make smart car. What should we do if we want 
 | ![4c653a3dd887b27f8cef84b7a16ad35c](media/4c653a3dd887b27f8cef84b7a16ad35c.png) | ![7b68e9b402d47300b9fa37a00e22371c](media/7b68e9b402d47300b9fa37a00e22371c.png) | ![](media/8e467a38bc496dea764747429061a92a.jpeg)             | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              |
 | L293D Chip*1                                                 | Fan                                                          | Motor*1                                                      | Jumper Wires                                                 |
 
-### Component Knowledge:
+ Component Knowledge:
 
 **L293D Chip:**
 
@@ -3100,7 +3100,7 @@ The two-channel motor can be driven and rotate clockwise and anticlockwise when 
 
 ![](media/2e5e0bd5b4577ac159d0568404dc21b5.png)
 
-|  \#  | Pin Name |                     Description                     |
+|  \##  | Pin Name |                     Description                     |
 | :--: | :------: | :-------------------------------------------------: |
 |  1   | Enable1  |        Enable pin input 1(2) and Input 2(7)         |
 |  2   |   In1    | Control output1 and controlled  by digital circuit  |
@@ -3119,13 +3119,13 @@ The two-channel motor can be driven and rotate clockwise and anticlockwise when 
 |  15  |   In4    | Control output 4 and controlled by  digital circuit |
 |  16  |    +V    |        Connect to + 5V to enable IC function        |
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/88f9ff66e98070062caa1d4695895d44.png)
 
 ![](media/980102d2b59a950e13401394f6b8dcc2.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter"
 
@@ -3145,7 +3145,7 @@ Note: Press Ctrl + C on keyboard and exit code running.
 import RPi.GPIO as GPIO
 import time
 
-#define L293D pin
+##define L293D pin
 INA1 = 17
 INA2 = 27
 ENA = 22
@@ -3157,8 +3157,8 @@ GPIO.setup(INA1,GPIO.OUT)
 GPIO.setup(INA2,GPIO.OUT)
 GPIO.setup(ENA,GPIO.OUT)
 
-pwmA = GPIO.PWM(ENA,100)  #create a PWM instance
-pwmA.start(0)   #start PWM
+pwmA = GPIO.PWM(ENA,100)  ##create a PWM instance
+pwmA.start(0)   ##start PWM
 
 def forward():
     GPIO.output(INA1,GPIO.HIGH)
@@ -3174,7 +3174,7 @@ def stop():
     pwmA.ChangeDutyCycle(0)
     
     
-while True:     #loop
+while True:     ##loop
     forward()
     time.sleep(3)
     stop()
@@ -3185,19 +3185,19 @@ while True:     #loop
     time.sleep(2)
     
 
-pwmA.stop()  #stop PWM
-GPIO.cleanup()    #release all GPIO
+pwmA.stop()  ##stop PWM
+GPIO.cleanup()    ##release all GPIO
 ```
 
 
 
-## Project 28：Ultrasonic
+### Project 28：Ultrasonic
 
-### Description：
+ Description：
 
 An ultrasonic sensor is an electronic device that measures the distance of a target object by emitting ultrasonic sound waves, and converts the reflected sound into an electrical signal.
 
-### Components：
+ Components：
 
 | ![8352708d7233ac1da810b9c6bc9f3174](media/8352708d7233ac1da810b9c6bc9f3174.png) | ![5b4223076c8f4f19ccf62039f929eafd](media/5b4223076c8f4f19ccf62039f929eafd.png) | ![image-20230525120535513](media/image-20230525120535513.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -3205,7 +3205,7 @@ An ultrasonic sensor is an electronic device that measures the distance of a tar
 | ![c5aadd2106124e3a345af17ce33176ca](media/c5aadd2106124e3a345af17ce33176ca.png) | ![046551e75ea440f25038f2fcd6651fe6](media/046551e75ea440f25038f2fcd6651fe6.jpeg) | ![](media/10d87dd4cd26593bab967167fa8087fd.png)              |
 | Breadboard*1                                                 | HC-SR04 Ultrasonic Sensor*1                                  | Jumper Wires                                                 |
 
-### Component Knowledge
+ Component Knowledge
 
 The ultrasonic module will emit the ultrasonic waves after trigger signal. When the ultrasonic waves encounter the object and are reflected back, the module outputs an echo signal, so it can determine the distance of object from the time difference between trigger signal and echo signal. 
 
@@ -3223,13 +3223,13 @@ and the propagation speed of sound in the air is about 343m/s, therefore,  dista
 
 ![image-20230525164239194](media/image-20230525164239194.png)
 
-### Schematic Diagram：
+ Schematic Diagram：
 
 ![](media/71b8b763852ae90066f9972f4bdf40ae.png)
 
 ![](media/d17997fbbab5e470fcac62fe8440e7d1.png)
 
-### Run Example Code：
+ Run Example Code：
 
 Input the following commands and press "Enter"
 
@@ -3251,41 +3251,41 @@ import time
  
 GPIO.setmode(GPIO.BCM)
   
-#define GPIO pin
+##define GPIO pin
 GPIO_TRIGGER = 23
 GPIO_ECHO = 24
   
-#set GPIO mode (IN / OUT)
+##set GPIO mode (IN / OUT)
 GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
 GPIO.setup(GPIO_ECHO, GPIO.IN)
 
 def distance():
-    # 10us is the trigger signal
+    ## 10us is the trigger signal
     GPIO.output(GPIO_TRIGGER, True)
-    time.sleep(0.00001)  #10us
+    time.sleep(0.00001)  ##10us
     GPIO.output(GPIO_TRIGGER, False)
     
     start_time = time.time()
     stop_time = time.time()
     
-    while GPIO.input(GPIO_ECHO) == 0:   #Indicates that the ultrasonic wave has been emitted
-        start_time = time.time()  #Record launch time
+    while GPIO.input(GPIO_ECHO) == 0:   ##Indicates that the ultrasonic wave has been emitted
+        start_time = time.time()  ##Record launch time
   
-    while GPIO.input(GPIO_ECHO) == 1:   #Indicates that the returned ultrasound has been received
-        stop_time = time.time()   #Record receiving time
+    while GPIO.input(GPIO_ECHO) == 1:   ##Indicates that the returned ultrasound has been received
+        stop_time = time.time()   ##Record receiving time
   
-    time_elapsed = stop_time - start_time  #Time difference from transmit to receive
-    distance = (time_elapsed * 34300) / 2  #Calculate the distance
-    return distance   #Return to calculated distance
+    time_elapsed = stop_time - start_time  ##Time difference from transmit to receive
+    distance = (time_elapsed * 34300) / 2  ##Calculate the distance
+    return distance   ##Return to calculated distance
   
-if __name__ == '__main__':   #Program entry
+if __name__ == '__main__':   ##Program entry
     try:
         while True:  
-            dist = distance()  #
-            print("Measured Distance = {:.2f} cm".format(dist)) #{:.2f},Keep two decimal places
+            dist = distance()  ##
+            print("Measured Distance = {:.2f} cm".format(dist)) ##{:.2f},Keep two decimal places
             time.sleep(0.1)
   
-        # Reset by pressing CTRL + C
+        ## Reset by pressing CTRL + C
     except KeyboardInterrupt:
         print("Measurement stopped by User")
         GPIO.cleanup()
@@ -3293,13 +3293,4 @@ if __name__ == '__main__':   #Program entry
 
 
 
-# 3.Resources：
-
-1.  [https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/6](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/6)
-
-2.  <https://wiki.keyestudio.com/KS3001(3002,_3003,.....3012%EF%BC%89Raspberry_Pi_Complete_Device_Kit>
-
-3.  [https://www.raspberrypi.org/documentation/installation/installing-images/README.md](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)
-
-4.  [https://www.raspberrypi.org/software/](https://www.raspberrypi.org/software/)
 
