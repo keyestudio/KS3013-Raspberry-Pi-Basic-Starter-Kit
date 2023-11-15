@@ -1,7 +1,7 @@
 
 .. toctree::
    :maxdepth: 3
-   :caption: KS3013 Raspberry Pi Basic Starter Kit Python
+   :caption: KS3013 Raspberry Pi Basic Starter Kit 
 
 
    home.md
