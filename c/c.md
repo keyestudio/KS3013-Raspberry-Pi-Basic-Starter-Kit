@@ -2666,11 +2666,11 @@ Gas MQ-2 leakage alarm detects the presence of a combustible or toxic gas and re
 
  Experiment Components：
 
-| ![img](media/wps193.jpg)                                     | ![img](media/wps194.jpg)                                     | ![img](media/wps195.jpg)       | ![img](media/wps196.jpg) | ![img](media/wps180.jpg)                                     | ![img](media/wps163.jpg) |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------ | ------------------------ | ------------------------------------------------------------ | ------------------------ |
-| Raspberry Pi*1                                               | GPIO Extension Board*1                                       | 40 pin Colorful Jumper Wires*1 | Breadboard*1             | Potentiometer*1                                              | Active Buzzer *1         |
-| ![image-20231115114746565](media/image-20231115114746565.png) | ![image-20231115114741512](media/image-20231115114741512.png) | ![img](media/wps201.jpg)       | ![img](media/wps200.jpg) | ![image-20231115114736130](media/image-20231115114736130.png) |                          |
-| LCD1602 display*1                                            | Analog Gas MQ-2 Sensor * 1                                   | PCF8591 A/D Converter Module*1 | Jumper Wires             | M-F Dupont Line                                              |                          |
+| ![](media/wps193.jpg) | ![](media/wps194.jpg)  | ![](media/wps195.jpg)   | ![](media/wps196.jpg) | ![](media/wps180.jpg) | ![](media/wps163.jpg) |
+| --------------------- | ---------------------- | ----------------------- | --------------------- | --------------------- | --------------------- |
+| Raspberry Pi*1        | GPIO Extension Board*1 | 40 pin  Jumper Wires*1  | Breadboard*1          | Potentiometer*1       | Active Buzzer *1      |
+| ![](media/wps25.png)  | ![](media/wps31.jpg)   | ![](media/wps201.jpg)   | ![](media/wps200.jpg) | ![](media/wps134.png) |                       |
+| LCD1602 display*1     | Gas MQ-2 Sensor * 1    | PCF8591 A/D  Module*1   | Jumper Wires          | M-F Dupont Line       |                       |
 
 **Component Knowledge：**
 
@@ -2821,7 +2821,7 @@ If you have ever had a water heater explode or ever tried to make submersible el
 | ![img](media/wps193.jpg)                                     | ![img](media/wps194.jpg)       | ![img](media/wps195.jpg)       | ![img](media/wps196.jpg)                                     | ![img](media/wps163.jpg) |
 | ------------------------------------------------------------ | ------------------------------ | ------------------------------ | ------------------------------------------------------------ | ------------------------ |
 | Raspberry Pi*1                                               | GPIO Extension Board*1         | 40 pin Colorful Jumper Wires*1 | Breadboard*1                                                 | Active Buzzer *1         |
-| ![image-20231115115041817](media/image-20231115115041817.png) | ![img](media/wps201.jpg)       | ![img](media/wps200.jpg)       | ![image-20231115114736130](media/image-20231115114736130.png) |                          |
+| ![](media/image-20231115115041817.jpg) | ![img](media/wps201.jpg)       | ![img](media/wps200.jpg)       | ![](media/wps134.png) |                          |
 | Water Level Sensor * 1                                       | PCF8591 A/D Converter Module*1 | Jumper Wires                   | M-F Dupont Line                                              |                          |
 
 **Component Knowledge：**
@@ -2910,10 +2910,10 @@ Therefore, we design a relay module with NO and NC ends. Let’s get started.
 
  Experiment Components：
 
-| ![img](media/wps193.jpg)                                     | ![img](media/wps194.jpg)                                     | ![img](media/wps195.jpg)                                     | ![img](media/wps196.jpg) | ![image-20231115115242762](media/image-20231115115242762.png) | ![image-20231115115255995](media/image-20231115115255995.png) |
+| ![img](media/wps193.jpg)                                     | ![img](media/wps194.jpg)                                     | ![img](media/wps195.jpg)                                     | ![img](media/wps196.jpg) | ![](media/image-20231115115242762.jpg) | ![](media/wps38.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Raspberry Pi*1                                               | GPIO Extension Board*1                                       | 40pin Colorful Jumper Wires*1                                | Breadboard*1             | Relay Module*1                                               | Water Pipe*1                                                 |
-| ![image-20231115114736130](media/image-20231115114736130.png) | ![image-20231115115406365](media/image-20231115115406365.png) | ![image-20231115115356632](media/image-20231115115356632.png) | ![img](media/wps200.jpg) | ![image-20231115115347092](media/image-20231115115347092.png) |                                                              |
+| ![](media/wps134.png) | ![](media/wps40.jpg) | ![](media/image-20231115115356632.jpg) | ![img](media/wps200.jpg) | ![](media/image-20231115115347092.png) |                                                              |
 | M-F Dupont Line                                              | 220Ω Resistor*1                                              | Screwdriver*1                                                | Jumper Wires             | Water Pump*1                                                 |                                                              |
 
  Component Knowledge：
@@ -2995,12 +2995,12 @@ The household plants are popular in many a communities. They will die if you for
 
  Experiment Components：
 
-| ![img](media/wps193.jpg)                                     | ![img](media/wps194.jpg)                                     | ![img](media/wps195.jpg)                                     | ![img](media/wps196.jpg)                                     | ![image-20231115115242762](media/image-20231115115242762.png) |
+| ![img](media/wps193.jpg)                                     | ![img](media/wps194.jpg)                                     | ![img](media/wps195.jpg)                                     | ![img](media/wps196.jpg)                                     | ![](media/image-20231115115242762.jpg) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Raspberry Pi*1                                               | GPIO Extension Board*1                                       | 40 pin Colorful Jumper Wires*1                               | Breadboard*1                                                 | Relay Module*1                                               |
-| ![image-20231115115347092](media/image-20231115115347092.png) | ![image-20231115115613440](media/image-20231115115613440.png) | ![img](media/wps201.jpg)                                     | ![image-20231115115406365](media/image-20231115115406365.png) | ![image-20231115115255995](media/image-20231115115255995.png) |
+| ![](media/image-20231115115347092.png) | ![](media/image-20231115115613440.png) | ![img](media/wps201.jpg)                                     | ![](media/wps40.jpg) | ![](media/wps38.png) |
 | Water Pump*1                                                 | Soil Humidity Sensor*1                                       | Keyestudio PCF8591 A/D Converter Module*1                    | 220Ω Resistor*1                                              | Water Pipe*1                                                 |
-| ![image-20231115114736130](media/image-20231115114736130.png) | ![img](media/wps200.jpg)                                     | ![image-20231115115356632](media/image-20231115115356632.png) |                                                              |                                                              |
+| ![](media/wps134.png) | ![img](media/wps200.jpg)                                     | ![](media/image-20231115115356632.jpg) |                                                              |                                                              |
 | M-F Dupont Line                                              | Jumper Wires                                                 | Screwdriver*1                                                |                                                              |                                                              |
 
  Component Knowledge：
@@ -3080,7 +3080,7 @@ Servo is applied widely, especially for robot like human robots and moving robot
 
  Experiment Components：
 
-| ![img](media/wps193.jpg) | ![img](media/wps194.jpg) | ![img](media/wps195.jpg)       | ![img](media/wps196.jpg) | ![image-20231115115820229](media/image-20231115115820229.png) | ![img](media/wps200.jpg) |
+| ![img](media/wps193.jpg) | ![img](media/wps194.jpg) | ![img](media/wps195.jpg)       | ![img](media/wps196.jpg) | ![](media/wps26.png) | ![img](media/wps200.jpg) |
 | ------------------------ | ------------------------ | ------------------------------ | ------------------------ | ------------------------------------------------------------ | ------------------------ |
 | Raspberry Pi*1           | GPIO Extension Board*1   | 40 pin Colorful Jumper Wires*1 | Breadboard*1             | Servo Motor*1                                                | Jumper Wires             |
 
@@ -3163,7 +3163,7 @@ In generally, we use a DC motor to make smart car. What should we do if we want 
 | ![img](media/wps193.jpg) | ![img](media/wps194.jpg) | ![img](media/wps195.jpg)                                     | ![img](media/wps196.jpg) | ![img](media/wps200.jpg) |
 | ------------------------ | ------------------------ | ------------------------------------------------------------ | ------------------------ | ------------------------ |
 | Raspberry Pi*1           | GPIO Extension Board*1   | 40 pin Colorful jumper Wires*1                               | Breadboard*1             | Jumper Wires             |
-| ![img](media/wps1.jpg)   | ![img](media/wps2.jpg)   | ![image-20231115115940040](media/image-20231115115940040.png) |                          |                          |
+| ![img](media/wps120.jpg)   | ![img](media/wps1.png)   | ![](media/wps2.png) |                          |                          |
 | L293D Chip*1             | Fan                      | Motor*1                                                      |                          |                          |
 
 
@@ -3289,7 +3289,7 @@ An ultrasonic sensor is an electronic device that measures the distance of a tar
 
  Experiment Components：
 
-| ![img](media/wps193.jpg) | ![img](media/wps194.jpg) | ![img](media/wps195.jpg)       | ![img](media/wps196.jpg) | ![image-20231115120456340](media/image-20231115120456340.png) | ![image-20231115120504016](media/image-20231115120504016.png) |
+| ![img](media/wps193.jpg) | ![img](media/wps194.jpg) | ![img](media/wps195.jpg)       | ![img](media/wps196.jpg) | ![](media/wps32.png) | ![](media/wps200.jpg) |
 | ------------------------ | ------------------------ | ------------------------------ | ------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Raspberry Pi*1           | GPIO Extension Board*1   | 40 pin Colorful Jumper Wires*1 | Breadboard*1             | HC-SR04 Ultrasonic Sensor*1                                  | Jumper Wires                                                 |
 

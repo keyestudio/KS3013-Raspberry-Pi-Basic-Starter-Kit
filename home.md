@@ -1,4 +1,4 @@
-# **Getting Started With Raspberry Pi Basic Starter Kit **
+# **Getting Started With Raspberry Pi Basic Starter Kit**
 
 ## Download code and library
 [https://fs.keyestudio.com/KS3013](https://fs.keyestudio.com/KS3013)
@@ -44,7 +44,7 @@ When you get this kit, please confirm whether all components listed below have b
 | 27   | MQ-2 Analog Gas Sensor        | 1        | ![img](media/wps31.jpg)                                      |
 | 28   | HC-SR04 Ultrasonic Sensor     | 1        | ![img](media/wps32.png)                                      |
 | 29   | Soil Humidity Sensor          | 1        | ![img](media/wps33.png)                                      |
-| 30   | Water Level Sensor            | 1        | ![img](media/wps34.jpg)                                      |
+| 30   | Water Level Sensor            | 1        | ![img](media/image-20231115115041817.jpg)                                      |
 | 31   | Water Pump                    | 1        | ![img](media/wps35.png)                                      |
 | 32   | Motor                         | 1        | ![img](media/wps36.png)                                      |
 | 33   | Fan                           | 1        | ![img](media/wps37.jpg)                                      |
